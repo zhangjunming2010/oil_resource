@@ -1,0 +1,17 @@
+.list-group-item{
+	border:none;
+}
+
+.background{
+	background-image: url(../img/background.jpg);
+	background-repeat:no-repeat;
+    background-position:center;
+}
+
+.div-login{
+	position: relative;
+  	margin-left:auto;
+  	margin-right:auto;
+  	margin-top:20%;
+  	width: 28%;
+}

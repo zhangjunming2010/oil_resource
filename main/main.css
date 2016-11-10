@@ -1,0 +1,4 @@
+/*取消x轴的滚动条*/
+.x-panel-content {
+	overflow-x:hidden;
+}
