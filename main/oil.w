@@ -30,10 +30,8 @@
    <mapping from="O_ITEMS" to="O_ITEMS" xid="default25"></mapping></result></span>
   <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:252px;left:77px;" type="YesNo" message="确认删除该数据？" title="确认" onYes="messageDialog1Yes"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
-    <div class="x-panel-top" xid="top3" height="120"> 
-      <div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
-   <div class="x-col" xid="col3" style="text-align:left;font-weight:bold;font-size:12px;">
-    <span xid="span3" style="color:#000000;"><![CDATA[您的位置：油料库存预警系统 > 油料管理]]></span></div> </div><div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter"
+    <div class="x-panel-top" xid="top3" height="85"> 
+      <div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter"
         xid="toolBar1"> 
         <div component="$UI/system/components/justep/row/row" class="x-row"
           xid="row3"> 

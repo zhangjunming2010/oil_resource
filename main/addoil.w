@@ -2,23 +2,22 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:309px;left:584px;" onLoad="modelLoad">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:309px;left:584px;">
     <div component="$UI/system/components/justep/data/baasData" autoLoad="false"
       xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource"
       url="/osews/os" tableName="oil_resource" idColumn="O_ID" orderBy="O_NBR:asc,O_BATCH:asc"
       confirmDelete="false" confirmRefresh="false" limit="-1"> 
-      <column label="序号" name="O_ID" type="String" xid="default1"/>  
-      <column label="油料编号" name="O_NBR" type="String" xid="default2"/>  
-      <column label="平均采购周期（单位：月）" name="O_CYCLE" type="Float" xid="default3"/>  
-      <column label="月均消耗量" name="O_USE" type="Float" xid="default4"/>  
-      <column label="保质期（单位：月）" name="O_LIFE" type="Integer" xid="default5"/>  
-      <column label="油料库存" name="O_STOCK" type="Float" xid="default6"/>  
-      <column label="油料批次" name="O_BATCH" type="String" xid="default7"/>  
-      <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default8"/>  
-      <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default9"/>  
-      <column label="项目标签" name="O_ITEMS" type="String" xid="default10"/>
-    </div>
-  <div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="tmpData" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="O_ID"><column label="序号" name="O_ID" type="String" xid="default11"></column>
+      <column label="序号" name="O_ID" type="String" xid="default1"></column>
+  <column label="油料编号" name="O_NBR" type="String" xid="default2"></column>
+  <column label="平均采购周期（单位：月）" name="O_CYCLE" type="Float" xid="default3"></column>
+  <column label="月均消耗量" name="O_USE" type="Float" xid="default4"></column>
+  <column label="保质期（单位：月）" name="O_LIFE" type="Integer" xid="default5"></column>
+  <column label="油料库存" name="O_STOCK" type="Float" xid="default6"></column>
+  <column label="油料批次" name="O_BATCH" type="String" xid="default7"></column>
+  <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default8"></column>
+  <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default9"></column>
+  <column label="项目标签" name="O_ITEMS" type="String" xid="default10"></column></div>
+  <div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="tmpData" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="O_ID" confirmDelete="false" confirmRefresh="false"><column label="序号" name="O_ID" type="String" xid="default11"></column>
   <column label="油料编号" name="O_NBR" type="String" xid="default12"></column>
   <column label="平均采购周期（单位：月）" name="O_CYCLE" type="Long" xid="default13"></column>
   <column label="月均消耗量" name="O_USE" type="Float" xid="default14"></column>
@@ -28,8 +27,6 @@
   <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default18"></column>
   <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default19"></column>
   <column label="项目标签" name="O_ITEMS" type="String" xid="default20"></column></div></div>  
-  <span component="$UI/system/components/justep/windowReceiver/windowReceiver"
-    xid="windowReceiver1" style="top:50px;left:120px;" onReceive="windowReceiver1Receive"/>
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
     <div class="x-panel-content" xid="content1">
@@ -47,11 +44,11 @@
    <div class="x-col" xid="col2">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
      <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;">油料编码：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input4" bind-ref='$model.baasData1.ref("O_NBR")' onFocus="input4Focus"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input4" bind-ref='$model.baasData1.ref("O_NBR")'></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col3" style="width:auto;">
     <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 检索" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
      <i xid="i2" class="icon-android-search"></i>
-     <span xid="span6">检索</span></a> </div> </div>
+     <span xid="span6"> 检索</span></a> </div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
    <div class="x-col" xid="col8">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit3">
@@ -88,7 +85,7 @@
    <div class="x-col" xid="col14">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit8">
      <label class="x-label" xid="label8" style="text-align:center;font-weight:bold;">项目标签：</label>
-     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="textarea1" bind-ref='$model.baasData1.ref("O_ITEMS")' bind-focus="textarea1Focus"></textarea></div> </div> 
+     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="textarea1" bind-ref='$model.baasData1.ref("O_ITEMS")' style="height:100%;"></textarea></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col13" style="width:auto;"></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>
@@ -118,4 +115,4 @@
    </div></div> 
     </div> 
   </div>
-</div>
+<span component="$UI/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver1" onReceive="windowReceiver1Receive"></span></div>

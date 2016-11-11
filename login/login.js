@@ -48,11 +48,11 @@ define(function(require) {
 				});
 				$(".x-hint").find("button[class='close']").hide();
 			} else {
-				userData.setFilter("filter1", "u_name = '" + name + "' and u_pwd = '" + pwd + "'");
+				userData.setFilter("filter1", "u_id = '" + name + "' and u_pwd = '" + pwd + "'");
 				userData.refreshData();
 				var ok = userData.count();
 				if (ok != "0") {
-					sessionStorage.u_auth = userData.val("u_auth");
+					sessionStorage.u_auth = userData.val("U_AUTH");
 					this.owner.send("ok");
 				} else {
 					justep.Util.hint("用户或者密码错误！", {

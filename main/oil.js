@@ -9,7 +9,7 @@ define(function(require){
 	Model.prototype.addBtnClick = function(event){
 		var url = require.toUrl("./addoil.w");
 		this.comp("windowDialog1").open({
-			src:url,
+			src:url
 		});
 	};
 
