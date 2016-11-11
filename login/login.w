@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window x-full-screen" component="$UI/system/components/justep/window/window" design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" onModelConstructDone="modelModelConstructDone" style="top:20px;left:46px;height:auto;"><div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="userData" queryAction="queryUser_info" saveAction="saveUser_info" url="/osews/os" tableName="user_info" idColumn="id">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="top:20px;left:46px;height:auto;" onLoad="modelLoad"><div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="userData" queryAction="queryUser_info" saveAction="saveUser_info" url="/osews/os" tableName="user_info" idColumn="id">
    <column label="id" name="id" type="Long" xid="default1"></column>
    <column label="u_name" name="u_name" type="String" xid="default2"></column>
    <column label="u_pwd" name="u_pwd" type="String" xid="default3"></column>

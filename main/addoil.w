@@ -2,8 +2,8 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:309px;left:584px;">
-    <div component="$UI/system/components/justep/data/baasData" autoLoad="true"
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:309px;left:584px;" onLoad="modelLoad">
+    <div component="$UI/system/components/justep/data/baasData" autoLoad="false"
       xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource"
       url="/osews/os" tableName="oil_resource" idColumn="O_ID" orderBy="O_NBR:asc,O_BATCH:asc"
       confirmDelete="false" confirmRefresh="false" limit="-1"> 
@@ -40,12 +40,14 @@
    <div class="x-panel-top" xid="top1"><div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" title="新增油料">
    <div class="x-titlebar-left" xid="left1"></div>
    <div class="x-titlebar-title" xid="title1">新增油料</div>
-   <div class="x-titlebar-right reverse" xid="right1"></div></div></div>
+   <div class="x-titlebar-right reverse" xid="right1"><a component="$UI/system/components/justep/button/button" class="btn btn-link btn-only-icon" label=" 关闭" xid="closeBtn" icon="icon-android-close" onClick='{"operation":"window.close"}'>
+     <i xid="i3" class="icon-android-close"></i>
+     <span xid="span4">关闭</span></a></div></div></div>
    <div class="x-panel-content" xid="content2"><div component="$UI/system/components/justep/row/row" class="x-row" xid="row1">
    <div class="x-col" xid="col2">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
      <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;">油料编码：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input4" bind-ref='$model.baasData1.ref("O_NBR")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input4" bind-ref='$model.baasData1.ref("O_NBR")' onFocus="input4Focus"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col3" style="width:auto;">
     <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 检索" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
      <i xid="i2" class="icon-android-search"></i>
@@ -86,18 +88,14 @@
    <div class="x-col" xid="col14">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit8">
      <label class="x-label" xid="label8" style="text-align:center;font-weight:bold;">项目标签：</label>
-     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="textarea1" bind-ref='$model.baasData1.ref("O_ITEMS")'></textarea></div> </div> 
+     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="textarea1" bind-ref='$model.baasData1.ref("O_ITEMS")' bind-focus="textarea1Focus"></textarea></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col13" style="width:auto;"></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>
    <div class="x-col x-col-center" xid="col16" style="text-align:center;">
-    <a component="$UI/system/components/justep/button/button" class="btn btn-default" label=" 提交" xid="button1" icon="icon-android-checkmark" onClick="button1Click">
-     <i xid="i1" class="icon-android-checkmark"></i>
-     <span xid="span3">提交</span></a> </div> 
-   <div class="x-col x-col-center" xid="col17" style="text-align:center;">
-    <a component="$UI/system/components/justep/button/button" class="btn btn-default" label=" 关闭" xid="button3" icon="icon-android-close" onClick='{"operation":"window.close"}'>
-     <i xid="i3" class="icon-android-close"></i>
-     <span xid="span4">关闭</span></a> </div> 
+    <a component="$UI/system/components/justep/button/button" class="btn btn-default" label=" 保存" xid="submitBtn" icon="dataControl dataControl-save" onClick="submitBtnClick">
+     <i xid="i1" class="dataControl dataControl-save"></i>
+     <span xid="span3"> 保存</span></a> </div> 
    <div class="x-col" xid="col18"></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row9" bind-style='{display:"none"}'>
    <div class="x-col" xid="col19">

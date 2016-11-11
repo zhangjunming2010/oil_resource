@@ -7,12 +7,10 @@ define(function(require){
 	};
 
 	Model.prototype.addBtnClick = function(event){
-		this.comp("windowDialog1").open();
-	};
-
-	Model.prototype.windowDialog1Received = function(event){
-		this.comp("baasData1").saveData();
-		this.comp("baasData1").refreshData();
+		var url = require.toUrl("./addoil.w");
+		this.comp("windowDialog1").open({
+			src:url,
+		});
 	};
 
 	Model.prototype.refreshBtnClick = function(event){
@@ -26,34 +24,6 @@ define(function(require){
 		data.refreshData();
 	};
 
-	var row = "";
-	Model.prototype.delBtnClick = function(event){
-		row = event.bindingContext.$object;
-		this.comp("messageDialog1").show();
-	};
-
-	Model.prototype.messageDialog1Yes = function(event){
-		this.comp("baasData1").deleteData(row);
-		this.comp("baasData1").saveData();
-		this.comp("baasData1").refreshData();
-	};
-
-	Model.prototype.editBtnClick = function(event){
-		var row = event.bindingContext.$object;
-		this.comp("windowDialog2").open({
-			params:{
-				type:"edit",
-				rowdata:row.toJson()
-			}
-		});
-	};
-
-	Model.prototype.windowDialog2Received = function(event){
-		this.comp("baasData1").saveData();
-		this.comp("baasData1").refreshData();
-	};
-
-
 	Model.prototype.searchBtnClick = function(event){
 		var o_nbr = this.comp("input4").val();
 		var o_batch = this.comp("input5").val();
@@ -66,40 +36,44 @@ define(function(require){
 	};
 
 
-	Model.prototype.windowReceiver1Receive = function(event){
-		var type = event.params.type;
-		if(type == "search"){
-			this.comp("input4").val(event.params.o_nbr);
-			this.comp("input5").val(event.params.o_batch);
-			this.comp("input6").val(event.params.o_items);
-			var o_nbr = this.comp("input4").val();
-			var o_batch = this.comp("input5").val();
-			var o_items = this.comp("input6").val();
-			var data = this.comp("baasData1");
-			data.setFilter("filter1", "o_nbr like '%"+o_nbr+"%'");
-			data.setFilter("filter2", "o_batch like '%"+o_batch+"%'");
-			data.setFilter("filter3", "o_items like '%"+o_items+"%'");
-			data.refreshData();
-		}
-	};
-
-
 	Model.prototype.modelModelConstruct = function(event){
 		var u_auth = sessionStorage.u_auth;
 		if(u_auth > 0 ){
 			var addBtnid = this.getIDByXID("addBtn");
 			$("#"+addBtnid).removeClass("hidden-element");
 		}
+		if(u_auth == 2 ){
+			var col1id = this.getIDByXID("col1");
+			$("#"+col1id).removeClass("hidden-element");
+		}
 	};
 
-	Model.prototype.detailBtnClick = function(event){
+	Model.prototype.tr6Dblclick = function(event){
 		var row = event.bindingContext.$object;
-		this.comp("windowDialog2").open({
-			params:{
-				type:"detail",
-				rowdata:row.toJson()
-			}
+		var url = require.toUrl("./editoil.w");
+		var params = {
+			rowdata:row.toJson()
+		};
+		this.comp("windowDialog1").open({
+			src:url,
+			params:params
 		});
+	};
+
+	Model.prototype.windowDialog1Received = function(event){
+		this.comp("baasData1").saveData();
+		this.comp("baasData1").refreshData();
+	};
+
+	var row;
+	Model.prototype.delBtnClick = function(event){
+		row = event.bindingContext.$object;
+		this.comp("messageDialog1").show();
+	};
+
+	Model.prototype.messageDialog1Yes = function(event){
+		this.comp("baasData1").deleteData(row);
+		this.comp("baasData1").saveData();
 	};
 
 	return Model;

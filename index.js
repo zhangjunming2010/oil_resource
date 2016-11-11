@@ -10,7 +10,7 @@ define(function(require) {
 	Model.prototype.modelModelConstruct = function(event) {
 		var u_auth = sessionStorage.u_auth;
 		var url = require.toUrl("./login/login.w");
-		if (u_auth !== undefined) {
+		if (u_auth !== undefined && u_auth !== "-1") {
 			url = require.toUrl("./desk/desk.w");
 		}
 		this.comp("windowDialog1").open({

@@ -17,30 +17,18 @@
   <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default9"></column>
   <column label="项目标签" name="O_ITEMS" type="String" xid="default10"></column></div>
   </div>  
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:254px;left:14px;" src="./addoil.w" status="normal" forceRefreshOnOpen="true" width="50%" onReceived="windowDialog1Received" height="88%"><result concept="baasData1" operation="edit" origin="baasData1" xid="default37">
-   <mapping from="O_ID" to="O_ID" locator="true" xid="default38"></mapping>
-   <mapping from="O_NBR" to="O_NBR" xid="default39"></mapping>
-   <mapping from="O_CYCLE" to="O_CYCLE" xid="default40"></mapping>
-   <mapping from="O_USE" to="O_USE" xid="default41"></mapping>
-   <mapping from="O_LIFE" to="O_LIFE" xid="default42"></mapping>
-   <mapping from="O_STOCK" to="O_STOCK" xid="default43"></mapping>
-   <mapping from="O_BATCH" to="O_BATCH" xid="default44"></mapping>
-   <mapping from="O_REVIEW" to="O_REVIEW" xid="default45"></mapping>
-   <mapping from="O_RISK" to="O_RISK" xid="default46"></mapping>
-   <mapping from="O_ITEMS" to="O_ITEMS" xid="default47"></mapping></result></span>
-  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:249px;left:166px;" type="YesNo" title="确认" width="270" message="该操作不可逆，确认删除？" onYes="messageDialog1Yes"></span>
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:255px;left:75px;" status="normal" width="50%" height="88%" src="./editoil.w" onReceived="windowDialog2Received"><result concept="baasData1" operation="modify" origin="baasData1" xid="default26">
-   <mapping from="O_ID" to="O_ID" locator="true" xid="default27"></mapping>
-   <mapping from="O_NBR" to="O_NBR" xid="default28"></mapping>
-   <mapping from="O_CYCLE" to="O_CYCLE" xid="default29"></mapping>
-   <mapping from="O_USE" to="O_USE" xid="default30"></mapping>
-   <mapping from="O_LIFE" to="O_LIFE" xid="default31"></mapping>
-   <mapping from="O_STOCK" to="O_STOCK" xid="default32"></mapping>
-   <mapping from="O_BATCH" to="O_BATCH" xid="default33"></mapping>
-   <mapping from="O_REVIEW" to="O_REVIEW" xid="default34"></mapping>
-   <mapping from="O_RISK" to="O_RISK" xid="default35"></mapping>
-   <mapping from="O_ITEMS" to="O_ITEMS" xid="default36"></mapping></result></span>
-  <span component="$UI/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver1" style="top:250px;left:212px;" onReceive="windowReceiver1Receive"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:249px;left:33px;" status="normal" width="50%" height="88%" onReceived="windowDialog1Received" src="./addoil.w"><result concept="baasData1" operation="edit" origin="baasData1" xid="default11">
+   <mapping from="O_ID" to="O_ID" locator="true" xid="default12"></mapping>
+   <mapping from="O_NBR" to="O_NBR" xid="default13"></mapping>
+   <mapping from="O_CYCLE" to="O_CYCLE" xid="default14"></mapping>
+   <mapping from="O_USE" to="O_USE" xid="default15"></mapping>
+   <mapping from="O_LIFE" to="O_LIFE" xid="default20"></mapping>
+   <mapping from="O_STOCK" to="O_STOCK" xid="default21"></mapping>
+   <mapping from="O_BATCH" to="O_BATCH" xid="default22"></mapping>
+   <mapping from="O_REVIEW" to="O_REVIEW" xid="default23"></mapping>
+   <mapping from="O_RISK" to="O_RISK" xid="default24"></mapping>
+   <mapping from="O_ITEMS" to="O_ITEMS" xid="default25"></mapping></result></span>
+  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:252px;left:77px;" type="YesNo" message="确认删除该数据？" title="确认" onYes="messageDialog1Yes"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
     <div class="x-panel-top" xid="top3" height="85"> 
       <div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter"
@@ -113,26 +101,21 @@
                 <th xid="col12" style="text-align:center;width:10%;vertical-align:middle;">库存量</th>  
                 <th xid="col13" style="text-align:center;vertical-align:middle;width:10%;">批次</th>  
                 <th xid="col14" style="text-align:center;vertical-align:middle;">项目标签</th>
-              <th xid="col1" style="text-align:center;vertical-align:middle;width:12%;"><![CDATA[操作]]></th></tr> 
+              <th xid="col1" style="text-align:center;font-weight:bold;vertical-align:middle;width:8%;" class="hidden-element"><![CDATA[操作]]>
+  </th></tr> 
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
-              <tr xid="tr6"> 
+              <tr xid="tr6" bind-dblclick="tr6Dblclick"> 
                 <td xid="td13" bind-text='ref("O_NBR")' style="text-align:center;"></td>  
                 <td xid="td14" bind-text='ref("O_CYCLE")' style="text-align:center;"></td>  
                 <td xid="td15" bind-text='ref("O_USE")' style="text-align:center;"/>  
                 <td xid="td16" bind-text='ref("O_LIFE")' style="text-align:center;"/>  
                 <td xid="td17" bind-text='ref("O_STOCK")' style="text-align:center;"/>  
                 <td xid="td18" bind-text='ref("O_BATCH")' style="text-align:center;"/>  
-                <td xid="td19" style="text-align:center;" bind-text='ref("O_ITEMS")'></td>
-              <td xid="td1" style="text-align:center;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="查看" xid="detailBtn" onClick="detailBtnClick">
-   <i xid="i6"></i>
-   <span xid="span3">查看</span></a><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="编辑" xid="editBtn" onClick="editBtnClick" bind-style='{display:sessionStorage.u_auth &gt;= 1?";":"none;"}'>
-   <i xid="i3"></i>
-   <span xid="span4">编辑</span></a><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="删除" xid="delBtn" onClick="delBtnClick" bind-style='{display:sessionStorage.u_auth  ==2?";":"none;"}'>
+                <td xid="td19" style="text-align:center;" bind-text='ref("O_ITEMS")' bind-css='{display:"none"}'></td>
+              <td xid="td1" style="text-align:center;" bind-style='{display:sessionStorage.u_auth == 2?"":"none"}'><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="删除" xid="delBtn" onClick="delBtnClick">
    <i xid="i2"></i>
-   <span xid="span2">删除</span></a>
-  </td>
-  </tr> 
+   <span xid="span2">删除</span></a></td></tr> 
             </tbody> 
           </table> 
         </div> 
@@ -182,15 +165,4 @@
       </div> 
     </div> 
   </div>
-<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog3" style="top:255px;left:124px;" status="normal" width="25%" height="50%" src="./detailoil.w">
-   <result concept="baasData1" operation="modify" origin="baasData1" xid="default24">
-    <mapping from="O_ID" to="O_ID" locator="true" xid="default23"></mapping>
-    <mapping from="O_NBR" to="O_NBR" xid="default22"></mapping>
-    <mapping from="O_CYCLE" to="O_CYCLE" xid="default25"></mapping>
-    <mapping from="O_USE" to="O_USE" xid="default21"></mapping>
-    <mapping from="O_LIFE" to="O_LIFE" xid="default20"></mapping>
-    <mapping from="O_STOCK" to="O_STOCK" xid="default15"></mapping>
-    <mapping from="O_BATCH" to="O_BATCH" xid="default14"></mapping>
-    <mapping from="O_REVIEW" to="O_REVIEW" xid="default13"></mapping>
-    <mapping from="O_RISK" to="O_RISK" xid="default12"></mapping>
-    <mapping from="O_ITEMS" to="O_ITEMS" xid="default11"></mapping></result> </span></div>
+</div>

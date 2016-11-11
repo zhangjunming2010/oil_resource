@@ -12,7 +12,7 @@
    <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default8"></column>
    <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default9"></column>
    <column label="项目标签" name="O_ITEMS" type="String" xid="default10"></column></div></div> 
-<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:271px;left:46px;" src="./editoil.w" status="normal" width="50%"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
+<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:271px;left:46px;" src="./editoil.w" status="normal" width="50%" height="88%"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-top" xid="top3" height="85">
     <div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1">
      <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
