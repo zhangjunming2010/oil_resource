@@ -27,7 +27,9 @@ define(function(require){
 	};
 
 	Model.prototype.userBtnClick = function(event){
-
+		this.comp("wing1").hideLeft();
+		var url = require.toUrl("../user/user.w");
+		this.comp("windowContainer1").load(url);
 	};
 	
 	Model.prototype.logoutBtnClick = function(event){
