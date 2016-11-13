@@ -2,7 +2,7 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:243px;left:476px;">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:195px;left:557px;">
     <div component="$UI/system/components/justep/data/baasData" autoLoad="true"
       xid="baasData1" queryAction="queryUser_info" saveAction="saveUser_info" url="/osews/os"
       tableName="user_info" idColumn="U_ID" confirmDelete="false" confirmRefresh="false">
@@ -25,13 +25,6 @@
         xid="toolBar"> 
         <div component="$UI/system/components/justep/row/row" class="x-row"
           xid="row3"> 
-          <div class="x-col x-col-fixed x-col-center" xid="col7" style="width:auto;"> 
-            <a component="$UI/system/components/justep/button/button" class="btn btn-link hidden-element"
-              label=" 新增人员" xid="addBtn" icon="icon-android-add" onClick="addBtnClick"> 
-              <i xid="i1" class="icon-android-add"/>  
-              <span xid="span1">新增人员</span>
-            </a>
-          </div>  
           <div class="x-col x-col-fixed x-col-center" xid="col8" style="width:auto;"> 
             <a component="$UI/system/components/justep/button/button" class="btn btn-link"
               label=" 刷新数据" xid="refreshBtn" icon="icon-refresh" onClick="refreshBtnClick"> 
@@ -82,7 +75,7 @@
               </tr> 
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
-              <tr xid="tr6" bind-dblclick="tr6Dblclick"> 
+              <tr xid="tr6"> 
                 <td xid="td18" bind-text="ref(&quot;U_ID&quot;)" style="text-align:center;"/>  
                 <td xid="td19" style="text-align:center;" bind-text="ref(&quot;U_NAME&quot;)"
                   bind-css="{display:&quot;none&quot;}"/>  

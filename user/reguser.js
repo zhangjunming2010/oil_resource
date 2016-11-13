@@ -7,8 +7,8 @@ define(function(require) {
 	};
 
 	Model.prototype.submitBtnClick = function(event) {
-		var pwd2id = this.getIDByXID("u_pwd2");
-		$("#" + pwd2id).blur();
+		var pwdid = this.getIDByXID("password2");
+		$("#" + pwdid).blur();
 		var u_id = this.comp("input1").val();
 		var u_name = this.comp("input2").val();
 		var u_pwd = this.comp("password1").val();
@@ -16,8 +16,10 @@ define(function(require) {
 		if (u_id !== "" && u_name !== "" && u_pwd !== "" && u_pwd2 !== "") {
 			if (u_pwd == u_pwd2) {
 				var data = this.comp("userData");
+				data.clear();
 				data.setFilter("filter1", "u_id = '" + u_id + "'");
 				data.refreshData();
+				console.log(data.getCount());
 				if (data.getCount() === 0) {
 					data.newData({
 						"defaultValues" : [ {
@@ -69,45 +71,6 @@ define(function(require) {
 		$("#" + input1id).focus();
 	};
 
-	Model.prototype.input1Keydown = function(event) {
-		var id = this.getIDByXID("submitBtn");
-		// 判断是否敲击了Enter键
-		$(document).keydown(function(event) {
-			if (event.keyCode == 13) {
-				$("#" + id).trigger("click");
-			}
-		});
-	};
-
-	Model.prototype.input2Keydown = function(event) {
-		var id = this.getIDByXID("submitBtn");
-		// 判断是否敲击了Enter键
-		$(document).keydown(function(event) {
-			if (event.keyCode == 13) {
-				$("#" + id).trigger("click");
-			}
-		});
-	};
-
-	Model.prototype.password1Keydown = function(event) {
-		var id = this.getIDByXID("submitBtn");
-		// 判断是否敲击了Enter键
-		$(document).keydown(function(event) {
-			if (event.keyCode == 13) {
-				$("#" + id).trigger("click");
-			}
-		});
-	};
-
-	Model.prototype.password2Keydown = function(event) {
-		var id = this.getIDByXID("submitBtn");
-		// 判断是否敲击了Enter键
-		$(document).keydown(function(event) {
-			if (event.keyCode == 13) {
-				$("#" + id).trigger("click");
-			}
-		});
-	};
 
 	return Model;
 });
