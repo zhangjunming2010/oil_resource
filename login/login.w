@@ -15,16 +15,17 @@
     <div xid="div12" class="list-group-item">
      <div class="input-group" component="$UI/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup4">
       <span class="input-group-addon" xid="span2">账号</span>
-      <input type="text" class="form-control" component="$UI/system/components/justep/input/input" xid="username" placeHolder="请输入账号" onFocus="usernameFocus"></input></div> </div> 
+      <input type="text" class="form-control" component="$UI/system/components/justep/input/input" xid="username" placeHolder="请输入账号" bind-keydown="usernameKeydown"></input></div> </div> 
     <div xid="div11" class="list-group-item">
      <div class="input-group" component="$UI/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup3">
       <span class="input-group-addon" xid="span5">密码</span>
-      <input component="$UI/system/components/justep/input/password" class="form-control" xid="pwd" placeHolder="请输入密码" bind-focus="pwdFocus"></input></div> </div> 
+      <input component="$UI/system/components/justep/input/password" class="form-control" xid="pwd" placeHolder="请输入密码" bind-keydown="pwdKeydown"></input></div> </div> 
     <div xid="div10" class="list-group-item">
      <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-block" label="登录" xid="loginBtn" onClick="loginBtnClick">
       <i xid="i5"></i>
       <span xid="span9">登录</span></a> </div> 
     <div xid="div9" class="list-group-item" align="center">
-     <a component="$UI/system/components/justep/button/button" class="btn btn-link" label="联系我们" xid="button2">
+     <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-sm" label="注册" xid="regBtn" style="color:#FF8080;" onClick="regBtnClick">
       <i xid="i6"></i>
-      <span xid="span10">联系我们</span></a> </div> </div> </div></div></div></div>
+      <span xid="span10">注册</span></a> </div> </div> </div></div></div>
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="../user/reguser.w" onReceived="windowDialog1Received" width="50%" height="55%" showTitle="true" title="用户注册" status="normal" forceRefreshOnOpen="true"></span></div>

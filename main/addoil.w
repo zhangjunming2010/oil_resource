@@ -53,27 +53,28 @@
    <div class="x-col" xid="col8">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit3">
      <label class="x-label" xid="label3" style="text-align:center;font-weight:bold;">平均采购周期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input6" bind-ref='$model.baasData1.ref("O_CYCLE")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input6" bind-ref='$model.baasData1.ref("O_CYCLE")' maxLength="2"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col9" style="width:auto;">
     <span xid="span1" style="font-weight:bold;">单位：月</span></div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
    <div class="x-col" xid="col10">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit4">
      <label class="x-label" xid="label4" style="text-align:center;font-weight:bold;">月均消耗量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input7" bind-ref='$model.baasData1.ref("O_USE")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input7" bind-ref='$model.baasData1.ref("O_USE")' format="0,000.00" maxLength="10"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col11" style="width:auto;"></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row4">
    <div class="x-col" xid="col4">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
      <label class="x-label" xid="label2" style="text-align:center;font-weight:bold;">保质期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input1" bind-ref='$model.baasData1.ref("O_LIFE")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input1" bind-ref='$model.baasData1.ref("O_LIFE")' maxLength="2" format="0,000"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col1" style="width:auto;">
-    <span xid="span2" style="font-weight:bold;">单位：月</span></div> </div>
+    <span xid="span2" style="font-weight:bold;">单位：月</span>
+  </div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row5">
    <div class="x-col" xid="col6">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit5">
      <label class="x-label" xid="label5" style="text-align:center;font-weight:bold;">库存量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input2" bind-ref='$model.baasData1.ref("O_STOCK")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input2" bind-ref='$model.baasData1.ref("O_STOCK")' maxLength="10" format="0,000.00"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col5" style="width:auto;"></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row6">
    <div class="x-col" xid="col12">

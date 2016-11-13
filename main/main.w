@@ -47,7 +47,7 @@
   </div>
    <div class="x-panel-content" xid="content1"><div component="$UI/system/components/bootstrap/row/row" class="row" xid="row1">
    <div class="col col-xs-6" xid="col2">
-    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar3" title="批次复验预警" style="width:100%;">
+    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar3" title="批次复验预警" style="width:100%;height:40px;">
      <div class="x-titlebar-left flex1" xid="left4"></div>
      <div class="x-titlebar-title" xid="title3" style="font-size:medium;font-weight:normal;">批次复验预警</div>
      <div class="x-titlebar-right flex1 reverse" xid="right3">
@@ -99,7 +99,7 @@
            <span aria-hidden="true" xid="span6">»</span>
            <span class="sr-only" xid="span7">Next</span></a> </li> </ul> </div> </div> </div> </div> </div> 
    <div class="col col-xs-6" xid="col3">
-    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar3" title="采购风险预警" style="height:100%;">
+    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar3" title="采购风险预警" style="height:40px;">
      <div class="x-titlebar-left" xid="left4" reverse="true"></div>
      <div class="x-titlebar-title pull-left" xid="title3" style="font-size:medium;font-weight:normal;">采购风险预警</div>
      <div class="x-titlebar-right reverse" xid="right3">

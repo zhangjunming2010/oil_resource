@@ -64,13 +64,13 @@
          <th xid="col1" style="text-align:center;vertical-align:middle;width:12%;">操作</th></tr> </thead> 
        <tbody class="x-list-template" xid="listTemplate2">
         <tr xid="tr6">
-         <td xid="td13" bind-text='ref("O_NBR")' style="text-align:center;"></td>
-         <td xid="td14" bind-text='ref("O_CYCLE")' style="text-align:center;"></td>
-         <td xid="td15" bind-text='ref("O_USE")' style="text-align:center;"></td>
-         <td xid="td16" bind-text='ref("O_LIFE")' style="text-align:center;"></td>
-         <td xid="td17" bind-text='ref("O_STOCK")' style="text-align:center;"></td>
-         <td xid="td18" bind-text='ref("O_BATCH")' style="text-align:center;"></td>
-         <td xid="td19" style="text-align:center;" bind-text='ref("O_ITEMS")'></td>
+         <td xid="td13" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output1" bind-ref='ref("O_NBR")'></div></td>
+         <td xid="td14" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output2" bind-ref='ref("O_CYCLE")'></div></td>
+         <td xid="td15" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output3" bind-ref='ref("O_USE")' format="0,000.00"></div></td>
+         <td xid="td16" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output4" bind-ref='ref("O_LIFE")'></div></td>
+         <td xid="td17" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output5" bind-ref='ref("O_STOCK")' format="0,000.00"></div></td>
+         <td xid="td18" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output6" bind-ref='ref("O_BATCH")'></div></td>
+         <td xid="td19" style="text-align:center;"><div component="$UI/system/components/justep/output/output" class="x-output" xid="output7" bind-ref='ref("O_ITEMS")'></div></td>
          <td xid="td1" style="text-align:center;">
           <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="查看" xid="detailBtn" onClick="detailBtnClick">
            <i xid="i6"></i>
