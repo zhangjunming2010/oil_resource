@@ -57,5 +57,29 @@ define(function(require){
 	};
 
 
+	Model.prototype.tr6Dblclick = function(event){
+		var row = event.bindingContext.$object;
+		this.comp("windowDialog1").open({
+			params:{
+				rowdata:row.toJson()
+			}
+		});
+	};
+
+
+	Model.prototype.windowDialog1Received = function(event){
+		var u_name = this.comp("input1").val();
+		var u_auth = this.comp("select2").val();
+		var data = this.comp("baasData1");
+		if(u_auth !== ""){
+			data.setFilter("filter2", "u_auth = "+u_auth);
+		}else{
+			data.setFilter("filter2", "1 = 1");
+		}
+		data.setFilter("filter1", "u_name like '%"+u_name+"%'");
+		data.refreshData();
+	};
+
+
 	return Model;
 });

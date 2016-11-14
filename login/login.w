@@ -28,4 +28,4 @@
      <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-sm" label="注册" xid="regBtn" style="color:#FF8080;" onClick="regBtnClick">
       <i xid="i6"></i>
       <span xid="span10">注册</span></a> </div> </div> </div></div></div>
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="../user/reguser.w" onReceived="windowDialog1Received" width="50%" height="55%" showTitle="true" title="用户注册" status="normal" forceRefreshOnOpen="true"></span></div>
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="../user/reguser.w" onReceived="windowDialog1Received" width="50%" height="60%" showTitle="true" title="用户注册" status="normal" forceRefreshOnOpen="true"></span></div>

@@ -18,7 +18,11 @@
   <span component="$UI/system/components/justep/messageDialog/messageDialog"
     xid="messageDialog1" type="YesNo" title="确认" message="确认删除该数据？" onYes="messageDialog1Yes"
     style="top:327px;left:116px;"/>
-  <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:288px;left:50px;" src="./detail.w" showTitle="true" title="权限修改" status="normal" width="25%" height="35%" onReceived="windowDialog1Received"><result concept="baasData1" operation="modify" origin="baasData1" xid="default20">
+   <mapping from="U_ID" to="U_ID" locator="true" xid="default21"></mapping>
+   <mapping from="U_NAME" to="U_NAME" xid="default22"></mapping>
+   <mapping from="U_PWD" to="U_PWD" xid="default23"></mapping>
+   <mapping from="U_AUTH" to="U_AUTH" xid="default24"></mapping></result></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
     <div class="x-panel-top" xid="top1" height="85">
       <div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter"
@@ -75,7 +79,7 @@
               </tr> 
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
-              <tr xid="tr6"> 
+              <tr xid="tr6" bind-dblclick="tr6Dblclick"> 
                 <td xid="td18" bind-text="ref(&quot;U_ID&quot;)" style="text-align:center;"/>  
                 <td xid="td19" style="text-align:center;" bind-text="ref(&quot;U_NAME&quot;)"
                   bind-css="{display:&quot;none&quot;}"/>  
