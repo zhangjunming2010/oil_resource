@@ -12,7 +12,7 @@ define(function(require) {
 		this.comp("input6").val("");
 		var data = this.comp("baasData1");
 		data.setFilter("filter1", "o_nbr like '%%'");
-		data.setFilter("filter2", "o_batch like '%%'");
+//		data.setFilter("filter2", "o_batch like '%%'");
 		data.setFilter("filter3", "o_items like '%%'");
 		data.refreshData();
 	};
@@ -26,7 +26,7 @@ define(function(require) {
 		var o_items = this.comp("input6").val();
 		var data = this.comp("baasData1");
 		data.setFilter("filter1", "o_nbr like '%" + o_nbr + "%'");
-		data.setFilter("filter2", "o_batch like '%" + o_batch + "%'");
+//		data.setFilter("filter2", "o_batch like '%" + o_batch + "%'");
 		data.setFilter("filter3", "o_items like '%" + o_items + "%'");
 		data.refreshData();
 	};
@@ -37,7 +37,7 @@ define(function(require) {
 		var o_items = this.comp("input6").val();
 		var data = this.comp("baasData1");
 		data.setFilter("filter1", "o_nbr like '%" + o_nbr + "%'");
-		data.setFilter("filter2", "o_batch like '%" + o_batch + "%'");
+//		data.setFilter("filter2", "o_batch like '%" + o_batch + "%'");
 		data.setFilter("filter3", "o_items like '%" + o_items + "%'");
 		data.refreshData();
 	};

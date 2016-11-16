@@ -7,14 +7,13 @@ define(function(require){
 	};
 	
 	Model.prototype.baasData1BeforeRefresh = function(event) {
-		this.comp("baasData1").setFilter("filter1", "O_REVIEW = 1");
+		this.comp("baasData1").setFilter("filter1", "O_REVIEW <> ' '");
 	};
 
 	Model.prototype.baasData2BeforeRefresh = function(event) {
-		this.comp("baasData2").setFilter("filter1", "O_RISK = 1");
+		this.comp("baasData2").setFilter("filter1", "O_RISK <> ' '");
 	};
 	
-
 	Model.prototype.searchBtnClick = function(event){
 		var o_nbr = this.comp("input4").val();
 		var o_batch = this.comp("input5").val();
@@ -26,14 +25,6 @@ define(function(require){
 				o_items:o_items
 			}
 		});
-	};
-
-	Model.prototype.button6Click = function(event) {
-		this.comp("baasData1").refreshData();
-	};
-
-	Model.prototype.button7Click = function(event) {
-		this.comp("baasData2").refreshData();
 	};
 
 	return Model;
