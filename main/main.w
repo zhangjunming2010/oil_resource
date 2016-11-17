@@ -49,7 +49,7 @@
    <ul class="x-list-template x-min-height list-group" xid="listTemplateUl1" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1">
     <li xid="li1" style="width:auto;" class="x-min-height list-group-item" componentname="li(html)" id="undefined_li1"><div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row2" style="height:75px;">
    <div class="x-col x-col-fixed x-col-center" xid="col1" style="width:auto;"><img src="../img/foil.png" alt="" xid="image1"></img></div>
-   <div class="x-col x-col-center" xid="col12"><div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row6">
+   <div class="x-col x-col-50 x-col-center" xid="col12"><div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row6">
    <div class="x-col x-col-center" xid="col13"><div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
    <label class="x-label" xid="label2" style="text-align:right;font-weight:bold;"><![CDATA[油料编号：]]></label>
    <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output3" bind-ref='ref("o_nbr")'></div></div><div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit14">
@@ -59,9 +59,7 @@
    <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output9" bind-ref='ref("o_items")'></div></div></div>
    </div>
   </div>
-  <div class="x-col x-col-center" xid="col24"><div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit10" style="color:#FF0000;">
-   <label class="x-label" xid="label10" style="text-align:right;font-weight:bold;">预警信息：</label>
-   <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output10" bind-ref='ref("o_review")' style="color:#FF0000;"></div></div></div></div></li></ul> </div></div> 
+  <div class="x-col x-col-center" xid="col24"><span xid="span1" bind-text='"预警信息：" +  val("o_review")' style="color:#FF0000;"></span></div></div></li></ul> </div></div> 
    <div class="col col-xs-6" xid="col3">
     <div component="$UI/system/components/justep/bar/bar" class="x-bar" xid="bar2" style="height:35;"><span xid="span7" class="center"><![CDATA[油料库存预警]]></span></div>
   <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list2" data="baasData2">
@@ -70,7 +68,7 @@
      <div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row14" style="height:75px;">
       <div class="x-col x-col-fixed x-col-center" xid="col39" style="width:auto;">
        <img src="../img/eoil.png" alt="" xid="image5"></img></div> 
-      <div class="x-col x-col-center" xid="col38">
+      <div class="x-col x-col-50 x-col-center" xid="col38">
        <div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row13">
         <div class="x-col x-col-center" xid="col36">
          <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit17">
@@ -83,8 +81,6 @@
           <label class="x-label" xid="label18" style="text-align:right;font-weight:bold;">项目标签：</label>
           <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output17" bind-ref='ref("o_items")'></div></div> </div> </div> </div> 
       <div class="x-col x-col-center" xid="col37">
-       <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit18" style="color:#FF0000;">
-        <label class="x-label" xid="label15" style="text-align:right;font-weight:bold;">预警信息：</label>
-        <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output18" bind-ref='ref("o_risk")' style="color:#FF0000;"></div></div> </div> </div> </li> </ul> </div></div> </div></div>
+       <span xid="span2" bind-text='"预警信息：" +  val("o_risk")' style="color:#FF0000;"></span></div> </div> </li> </ul> </div></div> </div></div>
    </div>
   <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="./oillist.w" status="normal" width="98%" showTitle="true" title="检索信息" height="95%" style="top:382px;left:100px;"></span></div>
