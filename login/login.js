@@ -71,6 +71,7 @@ define(function(require) {
 		$("#" + pwdid).blur();
 		var name = this.comp("username").val();
 		var pwd = this.comp("pwd").val();
+		var loginBtn = this.comp("loginBtn");
 		if (name === "") {
 			justep.Util.hint("请输入用户！", {
 				"delay" : 500,
@@ -89,7 +90,7 @@ define(function(require) {
 			} else {
 				$.support.cors = true;
 				$.ajax({
-					url : "http://172.26.3.30:8081/OilResources/servlet/login", // 请求的url地址
+					url : "http://localhost:8081/OilResources/servlet/login", // 请求的url地址
 					dataType : "json", // 返回格式为json
 					async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
 					data : {
@@ -99,6 +100,10 @@ define(function(require) {
 					type : "get", // 请求方式
 					beforeSend : function() {
 						// 请求前的处理
+						loginBtn.set({
+							"label" : " 登录中...",
+							"icon" : "icon-loading-a"
+						});
 					},
 					success : function(req) {
 						// 请求成功时处理
@@ -118,6 +123,10 @@ define(function(require) {
 					},
 					complete : function() {
 						// 请求完成的处理
+						loginBtn.set({
+							"label" : "登录",
+							"icon" : ""
+						});
 					},
 					error : function() {
 						// 请求出错处理

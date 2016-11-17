@@ -13,26 +13,74 @@ define(function(require){
 		});
 	};
 
-	Model.prototype.refreshBtnClick = function(event){
+	Model.prototype.refreshBtnClick = function(event) {
 		this.comp("input4").val("");
 		this.comp("input5").val("");
 		this.comp("input6").val("");
-		var data = this.comp("baasData1");
-		data.setFilter("filter1", "o_nbr like '%%'");
-		data.setFilter("filter2", "o_batch like '%%'");
-		data.setFilter("filter3", "o_items like '%%'");
-		data.refreshData();
+		var data = this.comp("data1");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/OilResources/servlet/searchoil", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				"operation" : "search",
+				"o_nbr" : "",
+				"s_batch" : "",
+				"o_items" : ""
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+				data.refreshData();
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});
 	};
 
 	Model.prototype.searchBtnClick = function(event){
 		var o_nbr = this.comp("input4").val();
-		var o_batch = this.comp("input5").val();
+		var s_batch = this.comp("input5").val();
 		var o_items = this.comp("input6").val();
-		var data = this.comp("baasData1");
-		data.setFilter("filter1", "o_nbr like '%"+o_nbr+"%'");
-		data.setFilter("filter2", "o_batch like '%"+o_batch+"%'");
-		data.setFilter("filter3", "o_items like '%"+o_items+"%'");
-		data.refreshData();
+		var data = this.comp("data1");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/OilResources/servlet/searchoil", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				"operation" : "search",
+				"o_nbr" : o_nbr,
+				"s_batch" : s_batch,
+				"o_items" : o_items
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+				data.refreshData();
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});
 	};
 
 
@@ -42,23 +90,48 @@ define(function(require){
 			var addBtnid = this.getIDByXID("addBtn");
 			$("#"+addBtnid).removeClass("hidden-element");
 		}
-		if(u_auth == 2 ){
-			var col1id = this.getIDByXID("col1");
-			$("#"+col1id).removeClass("hidden-element");
-		}
-	};
-
-	Model.prototype.tr6Dblclick = function(event){
-		var row = event.bindingContext.$object;
-		var url = require.toUrl("./editoil.w");
-		var params = {
-			rowdata:row.toJson()
-		};
-		this.comp("windowDialog1").open({
-			src:url,
-			params:params
+		var data = this.comp("data1");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/OilResources/servlet/searchoil", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				"operation" : "search",
+				"o_nbr" : "",
+				"s_batch" : "",
+				"o_items" : ""
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+				data.refreshData();
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
 		});
 	};
+
+//	Model.prototype.tr6Dblclick = function(event){
+//		var row = event.bindingContext.$object;
+//		var url = require.toUrl("./editoil.w");
+//		var params = {
+//			rowdata:row.toJson()
+//		};
+//		this.comp("windowDialog1").open({
+//			src:url,
+//			params:params
+//		});
+//	};
 
 	Model.prototype.windowDialog1Received = function(event){
 		this.comp("baasData1").saveData();
