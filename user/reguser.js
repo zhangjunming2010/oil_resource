@@ -91,5 +91,37 @@ define(function(require) {
 	};
 
 
+	Model.prototype.input1Keydown = function(event){
+		var id = this.getIDByXID("submitBtn");
+		if (event.keyCode == 13) {
+			$("#" + id).trigger("click");
+		}
+	};
+
+
+	Model.prototype.input2Keydown = function(event){
+		var id = this.getIDByXID("submitBtn");
+		if (event.keyCode == 13) {
+			$("#" + id).trigger("click");
+		}
+	};
+
+
+	Model.prototype.password1Keydown = function(event){
+		var id = this.getIDByXID("submitBtn");
+		if (event.keyCode == 13) {
+			$("#" + id).trigger("click");
+		}
+	};
+
+
+	Model.prototype.password2Keydown = function(event){
+		var id = this.getIDByXID("submitBtn");
+		if (event.keyCode == 13) {
+			$("#" + id).trigger("click");
+		}
+	};
+
+
 	return Model;
 });

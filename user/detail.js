@@ -7,8 +7,7 @@ define(function(require){
 	};
 
 	Model.prototype.windowReceiver1Receive = function(event){
-		console.log([event.params.rowdata]);
-		var data = this.comp("baasData1");
+		var data = this.comp("data2");
 		data.loadData([event.params.rowdata]);
 		data.first();
 	};

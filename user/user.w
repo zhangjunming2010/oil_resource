@@ -2,27 +2,19 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:195px;left:557px;">
-    <div component="$UI/system/components/justep/data/baasData" autoLoad="true"
-      xid="baasData1" queryAction="queryUser_info" saveAction="saveUser_info" url="/osews/os"
-      tableName="user_info" idColumn="U_ID" confirmDelete="false" confirmRefresh="false">
-      <column label="用户名" name="U_ID" type="String" xid="default8"/>  
-      <column label="姓名" name="U_NAME" type="String" xid="default9"/>  
-      <column label="密码" name="U_PWD" type="String" xid="default10"/>  
-      <column label="权限" name="U_AUTH" type="Integer" xid="default11"/>
-    </div>
-  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data1" idColumn="id"><column name="id" type="Integer" xid="xid1"></column>
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:286px;left:667px;" onModelConstruct="modelModelConstruct">
+    <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data1" idColumn="id"><column name="id" type="Integer" xid="xid1"></column>
   <column name="name" type="String" xid="xid2"></column>
   <column name="value" type="Integer" xid="xid3"></column>
-  <data xid="default1">[{&quot;id&quot;:1,&quot;name&quot;:&quot;普通用户&quot;,&quot;value&quot;:0},{&quot;id&quot;:2,&quot;name&quot;:&quot;维护人员&quot;,&quot;value&quot;:1},{&quot;id&quot;:3,&quot;name&quot;:&quot;后台管理员&quot;,&quot;value&quot;:2}]</data></div></div>  
+  <data xid="default1">[{&quot;id&quot;:1,&quot;name&quot;:&quot;普通用户&quot;,&quot;value&quot;:0},{&quot;id&quot;:2,&quot;name&quot;:&quot;维护人员&quot;,&quot;value&quot;:1},{&quot;id&quot;:3,&quot;name&quot;:&quot;后台管理员&quot;,&quot;value&quot;:2}]</data></div>
+  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data2" idColumn="u_id"><column name="u_id" type="String" xid="xid4"></column>
+  <column name="u_auth" type="Integer" xid="xid5"></column>
+  <column name="u_name" type="String" xid="xid6"></column>
+  <column name="u_pwd" type="String" xid="xid7"></column></div></div>  
   <span component="$UI/system/components/justep/messageDialog/messageDialog"
     xid="messageDialog1" type="YesNo" title="确认" message="确认删除该数据？" onYes="messageDialog1Yes"
-    style="top:327px;left:116px;"/>
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:288px;left:50px;" src="./detail.w" showTitle="true" title="权限修改" status="normal" width="25%" height="35%" onReceived="windowDialog1Received"><result concept="baasData1" operation="modify" origin="baasData1" xid="default20">
-   <mapping from="U_ID" to="U_ID" locator="true" xid="default21"></mapping>
-   <mapping from="U_NAME" to="U_NAME" xid="default22"></mapping>
-   <mapping from="U_PWD" to="U_PWD" xid="default23"></mapping>
-   <mapping from="U_AUTH" to="U_AUTH" xid="default24"></mapping></result></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
+    style="top:287px;left:112px;"/>
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:288px;left:50px;" src="./detail.w" showTitle="true" title="权限修改" status="normal" width="25%" height="40%" onReceived="windowDialog1Received"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
     <div class="x-panel-top" xid="top1" height="85">
       <div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter"
@@ -65,9 +57,9 @@
       </div>
     </div>  
     <div class="x-panel-content" xid="content1">
-      <div component="$UI/system/components/fragment/list/listTable" xid="listTable2"> 
+      <div component="$UI/system/components/fragment/list/listTable" xid="listTable2" data="data2"> 
         <div component="$UI/system/components/justep/list/list" class="x-list"
-          xid="list2" data="baasData1"> 
+          xid="list2" data="data2"> 
           <table class="table table-bordered table-hover table-striped" component="$UI/system/components/bootstrap/table/table"
             xid="table2"> 
             <thead xid="thead2"> 
@@ -80,8 +72,8 @@
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
               <tr xid="tr6" bind-dblclick="tr6Dblclick"> 
-                <td xid="td18" bind-text="ref(&quot;U_ID&quot;)" style="text-align:center;"/>  
-                <td xid="td19" style="text-align:center;" bind-text="ref(&quot;U_NAME&quot;)"
+                <td xid="td18" bind-text='ref("u_id")' style="text-align:center;"/>  
+                <td xid="td19" style="text-align:center;" bind-text='ref("u_name")'
                   bind-css="{display:&quot;none&quot;}"/>  
                 <td xid="td2" style="text-align:center;">
                   <a component="$UI/system/components/justep/button/button"
@@ -96,7 +88,7 @@
         </div> 
       </div>  
       <div component="$UI/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid"
-        xid="pagerBar1" data="baasData1"> 
+        xid="pagerBar1" data="data2"> 
         <div class="row" xid="div4"> 
           <div class="col-sm-3" xid="div5"> 
             <div class="x-pagerbar-length" xid="div6"> 

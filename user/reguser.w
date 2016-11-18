@@ -15,24 +15,24 @@
         <div class="x-col x-col-center" xid="col2">
          <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
           <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;">用户名：</label>
-          <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input1"></input></div> </div> 
+          <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input1" bind-keydown="input1Keydown"></input></div> </div> 
         <div class="x-col x-col-fixed x-col-center" xid="col3" style="width:120px;"><span xid="span1" style="font-weight:bold;font-size:small;"><![CDATA[建议：使用手机号]]></span></div></div> 
        <div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
    <div class="x-col" xid="col10">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit4">
      <label class="x-label" xid="label4" style="text-align:center;font-weight:bold;"><![CDATA[姓名：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input2"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input2" bind-keydown="input2Keydown"></input></div> </div> 
    <div class="x-col x-col-fixed" xid="col4" style="width:120px;"></div></div><div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
         <div class="x-col" xid="col1">
          <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit5">
    <label class="x-label" xid="label5" style="text-align:center;font-weight:bold;"><![CDATA[登录密码：]]></label>
-   <input component="$UI/system/components/justep/input/password" class="form-control x-edit" xid="password1"></input></div></div> 
+   <input component="$UI/system/components/justep/input/password" class="form-control x-edit" xid="password1" bind-keydown="password1Keydown"></input></div></div> 
         <div class="x-col x-col-fixed x-col-center" xid="col6" style="width:120px;"></div></div> 
        <div component="$UI/system/components/justep/row/row" class="x-row" xid="row4">
         <div class="x-col" xid="col5">
          <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
    <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;"><![CDATA[确认密码：]]></label>
-   <input component="$UI/system/components/justep/input/password" class="form-control x-edit" xid="password2"></input></div></div> 
+   <input component="$UI/system/components/justep/input/password" class="form-control x-edit" xid="password2" bind-keydown="password2Keydown"></input></div></div> 
         <div class="x-col x-col-fixed x-col-center" xid="col7" style="width:120px;"></div></div> 
        <div component="$UI/system/components/justep/row/row" class="x-row" xid="row5">
         <div class="x-col" xid="col15"></div>

@@ -2,41 +2,8 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:316px;left:372px;">
-    <div component="$UI/system/components/justep/data/baasData" autoLoad="false"
-      xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource"
-      url="/osews/os" tableName="oil_resource" idColumn="O_ID" orderBy="O_NBR:asc,O_BATCH:asc"
-      confirmDelete="false" confirmRefresh="false" limit="-1"> 
-      <column label="序号" name="O_ID" type="String" xid="default1"></column>
-  <column label="油料编号" name="O_NBR" type="String" xid="default2"></column>
-  <column label="平均采购周期（单位：月）" name="O_CYCLE" type="Float" xid="default3"></column>
-  <column label="月均消耗量" name="O_USE" type="Float" xid="default4"></column>
-  <column label="保质期（单位：月）" name="O_LIFE" type="Integer" xid="default5"></column>
-  <column label="油料库存" name="O_STOCK" type="Float" xid="default6"></column>
-  <column label="油料批次" name="O_BATCH" type="String" xid="default7"></column>
-  <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default8"></column>
-  <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default9"></column>
-  <column label="项目标签" name="O_ITEMS" type="String" xid="default10"></column></div>
-  <div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="tmpData" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="O_ID" confirmDelete="false" confirmRefresh="false"><column label="序号" name="O_ID" type="String" xid="default11"></column>
-  <column label="油料编号" name="O_NBR" type="String" xid="default12"></column>
-  <column label="平均采购周期（单位：月）" name="O_CYCLE" type="Long" xid="default13"></column>
-  <column label="月均消耗量" name="O_USE" type="Float" xid="default14"></column>
-  <column label="保质期（单位：月）" name="O_LIFE" type="Long" xid="default15"></column>
-  <column label="油料库存" name="O_STOCK" type="Float" xid="default16"></column>
-  <column label="油料批次" name="O_BATCH" type="String" xid="default17"></column>
-  <column label="批次复验预警标识" name="O_REVIEW" type="Integer" xid="default18"></column>
-  <column label="采购风险预警标识" name="O_RISK" type="Integer" xid="default19"></column>
-  <column label="项目标签" name="O_ITEMS" type="String" xid="default20"></column></div>
-  <div component="$UI/system/components/justep/data/data" autoLoad="false" xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1">
-   <column name="o_id" type="String" xid="xid1"></column>
-   <column name="o_cycle" type="Integer" xid="xid2"></column>
-   <column name="o_items" type="String" xid="xid3"></column>
-   <column name="o_life" type="Integer" xid="xid4"></column>
-   <column name="o_nbr" type="String" xid="xid5"></column>
-   <column name="o_use" type="Float" xid="xid6"></column>
-   <column name="s_batch" type="String" xid="xid7"></column>
-   <column name="s_stock" type="Float" xid="xid8"></column>
-   <column name="o_name" type="String" xid="xid9"></column></div></div>  
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:-2px;left:626px;">
+    </div>  
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
     <div class="x-panel-content" xid="content1">
@@ -54,35 +21,35 @@
    <div class="x-col" xid="col2">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
      <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;"><![CDATA[物资编码：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input4" bind-ref='$model.baasData1.ref("O_NBR")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_nbr"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col3" style="width:auto;">
-    <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 检索" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
+    <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 获取" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
      <i xid="i2" class="icon-android-search"></i>
-     <span xid="span6"> 检索</span></a> </div> </div>
+     <span xid="span6"> 获取</span></a> </div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row12">
    <div class="x-col" xid="col17">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit11">
      <label class="x-label" xid="label11" style="text-align:center;font-weight:bold;"><![CDATA[物资名称：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input10" bind-ref='$model.baasData1.ref("O_NBR")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_name"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col25" style="width:auto;">
     </div> </div><div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
    <div class="x-col" xid="col8">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit3">
      <label class="x-label" xid="label3" style="text-align:center;font-weight:bold;">平均采购周期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input6" bind-ref='$model.baasData1.ref("O_CYCLE")' maxLength="2"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_cycle" maxLength="2" dataType="Integer" format="0,000"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col9" style="width:auto;">
     <span xid="span1" style="font-weight:bold;">单位：月</span></div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
    <div class="x-col" xid="col10">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit4">
      <label class="x-label" xid="label4" style="text-align:center;font-weight:bold;">月均消耗量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input7" bind-ref='$model.baasData1.ref("O_USE")' format="0,000.00" maxLength="10"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_use" format="0,000.00" maxLength="10" dataType="Float"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col11" style="width:auto;"><span xid="span9" style="font-weight:bold;">单位：KG</span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row4">
    <div class="x-col" xid="col4">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
      <label class="x-label" xid="label2" style="text-align:center;font-weight:bold;">保质期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input1" bind-ref='$model.baasData1.ref("O_LIFE")' maxLength="2" format="0,000"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" format="0,000" dataType="Integer"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col1" style="width:auto;">
     <span xid="span2" style="font-weight:bold;">单位：月</span>
   </div> </div>
@@ -90,19 +57,19 @@
    <div class="x-col" xid="col6">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit5">
      <label class="x-label" xid="label5" style="text-align:center;font-weight:bold;">库存量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input2" bind-ref='$model.baasData1.ref("O_STOCK")' maxLength="10" format="0,000.00"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_stock" maxLength="10" format="0,000.00" dataType="Float"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col5" style="width:auto;"><span xid="span5" style="font-weight:bold;"><![CDATA[单位：KG]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row6">
    <div class="x-col" xid="col12">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
      <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;">批次：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input3" bind-ref='$model.baasData1.ref("O_BATCH")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col7" style="width:auto;"><span xid="span7" style="font-weight:bold;"><![CDATA[格式：201601]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row7">
    <div class="x-col" xid="col14">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit8">
      <label class="x-label" xid="label8" style="text-align:center;font-weight:bold;">项目标签：</label>
-     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="textarea1" bind-ref='$model.baasData1.ref("O_ITEMS")' style="height:100%;"></textarea></div> </div> 
+     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="o_items" style="height:100%;"></textarea></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col13" style="width:auto;"><span xid="span8" style="font-weight:bold;"><![CDATA[说明：多个项目中间空格隔开]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>
@@ -111,26 +78,8 @@
      <i xid="i1" class="dataControl dataControl-save"></i>
      <span xid="span3"> 保存</span></a> </div> 
    <div class="x-col" xid="col18"></div></div>
-  <div component="$UI/system/components/justep/row/row" class="x-row" xid="row9" bind-style='{display:"none"}'>
-   <div class="x-col" xid="col19">
-    <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit7">
-     <label class="x-label" xid="label7" style="text-align:center;font-weight:bold;">油料ID：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input5" bind-ref='$model.baasData1.ref("O_ID")'></input></div> </div> 
-   <div class="x-col x-col-20 x-col-center" xid="col20" style="width:auto;"></div></div>
-  <div component="$UI/system/components/justep/row/row" class="x-row" xid="row10" bind-visible="true" bind-style='{display:"none"}'>
-   <div class="x-col" xid="col21">
-    <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit9">
-     <label class="x-label" xid="label9" style="text-align:center;font-weight:bold;">批次复验预警标识：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input8" bind-ref='$model.baasData1.ref("O_REVIEW")'></input></div> </div> 
-   <div class="x-col x-col-20 x-col-center" xid="col22" style="width:auto;"></div></div>
-  <div component="$UI/system/components/justep/row/row" class="x-row" xid="row11" bind-visible="true" bind-style='{display:"none"}'>
-   <div class="x-col" xid="col23">
-    <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit10">
-     <label class="x-label" xid="label10" style="text-align:center;font-weight:bold;">采购风险预警标识：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="input9" bind-ref='$model.baasData1.ref("O_RISK")'></input></div> </div> 
-   <div class="x-col x-col-20 x-col-center" xid="col24" style="width:auto;"></div></div>
   </div>
    </div></div> 
     </div> 
   </div>
-<span component="$UI/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver1" onReceive="windowReceiver1Receive"></span></div>
+<span component="$UI/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver1"></span></div>

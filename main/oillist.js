@@ -1,6 +1,8 @@
 define(function(require) {
-//	var $ = require("jquery");
+	var $ = require("jquery");
 	// var justep = require("$UI/system/lib/justep");
+
+	var option = "";
 
 	var Model = function() {
 		this.callParent();
@@ -18,7 +20,6 @@ define(function(require) {
 			dataType : "json", // 返回格式为json
 			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
-				"operation" : "search",
 				"o_nbr" : "",
 				"s_batch" : "",
 				"o_items" : ""
@@ -56,7 +57,6 @@ define(function(require) {
 			dataType : "json", // 返回格式为json
 			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
-				"operation" : "search",
 				"o_nbr" : o_nbr,
 				"s_batch" : s_batch,
 				"o_items" : o_items
@@ -91,7 +91,6 @@ define(function(require) {
 			dataType : "json", // 返回格式为json
 			async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
-				"operation" : "search",
 				"o_nbr" : o_nbr,
 				"s_batch" : s_batch,
 				"o_items" : o_items
@@ -103,7 +102,6 @@ define(function(require) {
 			success : function(req) {
 				// 请求成功时处理
 				data.loadData(req);
-				data.refreshData();
 			},
 			complete : function() {
 				// 请求完成的处理
@@ -114,14 +112,53 @@ define(function(require) {
 		});
 	};
 
-	Model.prototype.detailBtnClick = function(event){
+	Model.prototype.detailBtnClick = function(event) {
 		var row = event.bindingContext.$object;
 		this.comp("windowDialog1").open({
-			params:{
-				type:"detail",
-				rowdata:row.toJson()
+			params : {
+				type : "detail",
+				rowdata : row.toJson()
 			}
 		});
+	};
+
+	Model.prototype.data1CustomRefresh = function(event) {
+		if (option == "do") {
+			var o_nbr = this.comp("input4").val();
+			var s_batch = this.comp("input5").val();
+			var o_items = this.comp("input6").val();
+			var data = this.comp("data1");
+			var offset = data.getOffset();
+			var pagesize = this.comp("select1").val();
+			data.clear();
+			$.support.cors = true;
+			$.ajax({
+				url : "http://localhost:8081/OilResources/servlet/searchoil", // 请求的url地址
+				dataType : "json", // 返回格式为json
+				async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+				data : {
+					"offset" : offset,
+					"pagesize" : pagesize,
+					"o_nbr" : o_nbr,
+					"s_batch" : s_batch,
+					"o_items" : o_items
+				}, // 参数值
+				type : "get", // 请求方式
+				beforeSend : function() {
+					// 请求前的处理
+				},
+				success : function(req) {
+					// 请求成功时处理
+					data.loadData(req);
+				},
+				complete : function() {
+					// 请求完成的处理
+				},
+				error : function() {
+					// 请求出错处理
+				}
+			});
+		}
 	};
 
 	return Model;

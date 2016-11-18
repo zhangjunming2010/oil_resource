@@ -6,37 +6,56 @@ define(function(require) {
 		this.callParent();
 	};
 
-	var uuid = "";
 	Model.prototype.searchBtnClick = function(event) {
-		var input4id = this.getIDByXID("input4");
-		$("#" + input4id).blur();
-		var o_nbr = this.comp("input4").val();
+		var o_nbrid = this.getIDByXID("o_nbr");
+		var o_nameid = this.getIDByXID("o_name");
+		var s_stockid = this.getIDByXID("s_stock");
+		var o_name = this.comp("o_name");
+		var o_cycle = this.comp("o_cycle");
+		var o_use = this.comp("o_use");
+		var o_life = this.comp("o_life");
+		var o_items = this.comp("o_items");
+		$("#" + o_nbrid).blur();
+		var o_nbr = this.comp("o_nbr").val();
 		if (o_nbr !== undefined) {
-			var tmp = this.comp("tmpData");
-			tmp.setFilter("filter1", "o_nbr = '" + o_nbr + "'");
-			tmp.refreshData();
-			if (data.getCount() > 0) {
-				var data = this.comp("baasData1");
-				data.setFilter("filter1", "o_nbr = '" + o_nbr + "'");
-				data.refreshData();
-				this.comp("input5").val(uuid);
-				this.comp("input8").val(0);
-				this.comp("input9").val(0);
-				this.comp("input3").val("");
-				this.comp("input2").val("");
-				this.comp("textarea1").val("");
-				var input2id = this.getIDByXID("input2");
-				$("#" + input2id).focus();
-			} else {
-				justep.Util.hint("没有相关信息！", {
-					"delay" : 1000,
-					"position" : "middle",
-					"type" : "warning"
-				});
-				$(".x-hint").find("button[class='close']").hide();
-				var input6id = this.getIDByXID("input6");
-				$("#" + input6id).focus();
-			}
+			$.support.cors = true;
+			$.ajax({
+				url : "http://localhost:8081/OilResources/servlet/checkoil", // 请求的url地址
+				dataType : "json", // 返回格式为json
+				async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+				data : {
+					"o_nbr" : o_nbr,
+				}, // 参数值
+				type : "get", // 请求方式
+				beforeSend : function() {
+					// 请求前的处理
+				},
+				success : function(req) {
+					var code = req.code;
+					if (code === "-1") {
+						justep.Util.hint("没有相关信息！", {
+							"delay" : 1000,
+							"position" : "middle",
+							"type" : "warning"
+						});
+						$(".x-hint").find("button[class='close']").hide();
+						$("#" + o_nameid).focus();
+					} else {
+						o_name.val(req.o_name);
+						o_cycle.val(req.o_cycle);
+						o_use.val(req.o_use);
+						o_life.val(req.o_life);
+						o_items.val(req.o_items);
+						$("#" + s_stockid).focus();
+					}
+				},
+				complete : function() {
+					// 请求完成的处理
+				},
+				error : function() {
+					// 请求出错处理
+				}
+			});
 		} else {
 			justep.Util.hint("油料编码不能为空！", {
 				"delay" : 1000,
@@ -48,19 +67,63 @@ define(function(require) {
 	};
 
 	Model.prototype.submitBtnClick = function(event) {
-		var textarea1id = this.getIDByXID("textarea1");
-		$("#" + textarea1id).blur();
-		var input1 = this.comp("input1").val();
-		var input2 = this.comp("input2").val();
-		var input3 = this.comp("input3").val();
-		var input4 = this.comp("input4").val();
-		var input6 = this.comp("input6").val();
-		var input7 = this.comp("input7").val();
-		var textarea1 = this.comp("textarea1").val();
-		if ((input1 !== undefined && input1 !== "") && (input2 !== undefined && input2 !== "") && (input3 !== undefined && input3 !== "") && (input4 !== undefined && input4 !== "")
-				&& (input6 !== undefined && input6 !== "") && (input7 !== undefined && input7 !== "") && (textarea1 !== undefined && textarea1 !== "")) {
-			this.owner.send(this.comp("baasData1"));
-			this.close();
+		var me = this;
+		var o_itemsid = me.getIDByXID("o_items");
+		$("#" + o_itemsid).blur();
+		var o_nbr = me.comp("o_nbr").val();
+		var o_name = me.comp("o_name").val();
+		var o_life = me.comp("o_life").val();
+		var o_cycle = me.comp("o_cycle").val();
+		var o_use = me.comp("o_use").val();
+		var s_batch = me.comp("s_batch").val();
+		var s_stock = me.comp("s_stock").val();
+		var o_items = me.comp("o_items").val();
+		var owner = me.owner;
+		if ((o_nbr !== undefined && o_nbr !== "") && (o_name !== undefined && o_name !== "") && (o_cycle !== undefined && o_cycle !== "") && (o_use !== undefined && o_use !== "")
+				&& (s_batch !== undefined && s_batch !== "") && (s_stock !== undefined && s_stock !== "") 
+				&& (o_items !== undefined && o_items !== "") && (o_items !== undefined && o_items !== "") && (o_life !== undefined && o_life !== "")) {
+			$.support.cors = true;
+			$.ajax({
+				url : "http://localhost:8081/OilResources/servlet/addoil", // 请求的url地址
+				dataType : "json", // 返回格式为json
+				async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
+				data : {
+					"o_nbr" : o_nbr,
+					"o_name" : o_name,
+					"o_life" : o_life,
+					"o_cycle" : o_cycle,
+					"o_use" : o_use,
+					"o_id" : justep.UUID.createUUID(),
+					"s_batch" : s_batch,
+					"s_stock" : s_stock,
+					"o_items" : o_items,
+				}, // 参数值
+				type : "get", // 请求方式
+				beforeSend : function() {
+					// 请求前的处理
+				},
+				success : function(req) {
+					var code = req.code;
+					if (code === "-1") {
+						justep.Util.hint("信息保存异常，请稍后再试！", {
+							"delay" : 1000,
+							"position" : "middle",
+							"type" : "warning"
+						});
+						$(".x-hint").find("button[class='close']").hide();
+						$("#" + o_itemsid).focus();
+					} else {
+						owner.send("ok");
+						me.close();
+					}
+				},
+				complete : function() {
+					// 请求完成的处理
+				},
+				error : function() {
+					// 请求出错处理
+				}
+			});
 		} else {
 			justep.Util.hint("请填入完整的信息后在提交！", {
 				"delay" : 1000,
@@ -96,20 +159,20 @@ define(function(require) {
 		});
 	};
 
-	Model.prototype.windowReceiver1Receive = function(event) {
-		uuid = justep.UUID.createUUID();
-		var data = this.comp("baasData1");
-		data.clear();
-		data.newData({
-			"defaultValues" : [ {
-				"O_ID" : uuid,
-				"O_REVIEW" : 0,
-				"O_RISK" : 0
-			} ]
-		});
-		var input4id = this.getIDByXID("input4");
-		$("#" + input4id).focus();
-	};
+	// Model.prototype.windowReceiver1Receive = function(event) {
+	// uuid = justep.UUID.createUUID();
+	// var data = this.comp("baasData1");
+	// data.clear();
+	// data.newData({
+	// "defaultValues" : [ {
+	// "O_ID" : uuid,
+	// "O_REVIEW" : 0,
+	// "O_RISK" : 0
+	// } ]
+	// });
+	// var input4id = this.getIDByXID("input4");
+	// $("#" + input4id).focus();
+	// };
 
 	return Model;
 });

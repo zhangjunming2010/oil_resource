@@ -4,8 +4,8 @@
   design="device:m;">  
   <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:292px;left:557px;"
     onModelConstruct="modelModelConstruct"> 
-    <div component="$UI/system/components/justep/data/data" autoLoad="false"
-      xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1"> 
+    <div component="$UI/system/components/justep/data/data" autoLoad="true"
+      xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1" onCustomRefresh="data1CustomRefresh"> 
       <column name="o_id" type="String" xid="xid1"/>  
       <column name="o_cycle" type="Integer" xid="xid2"/>  
       <column name="o_items" type="String" xid="xid3"/>  
@@ -18,20 +18,8 @@
     </div> 
   </div>  
   <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1"
-    style="top:249px;left:33px;" status="normal" width="50%" height="88%" onReceived="windowDialog1Received"
-    src="./addoil.w"> 
-    <result concept="baasData1" operation="edit" origin="baasData1" xid="default11"> 
-      <mapping from="O_ID" to="O_ID" locator="true" xid="default12"/>  
-      <mapping from="O_NBR" to="O_NBR" xid="default13"/>  
-      <mapping from="O_CYCLE" to="O_CYCLE" xid="default14"/>  
-      <mapping from="O_USE" to="O_USE" xid="default15"/>  
-      <mapping from="O_LIFE" to="O_LIFE" xid="default20"/>  
-      <mapping from="O_STOCK" to="O_STOCK" xid="default21"/>  
-      <mapping from="O_BATCH" to="O_BATCH" xid="default22"/>  
-      <mapping from="O_REVIEW" to="O_REVIEW" xid="default23"/>  
-      <mapping from="O_RISK" to="O_RISK" xid="default24"/>  
-      <mapping from="O_ITEMS" to="O_ITEMS" xid="default25"/> 
-    </result> 
+    style="top:249px;left:33px;" status="normal" width="50%" height="95%" src="./addoil.w" forceRefreshOnOpen="true" onReceived="windowDialog1Received"> 
+     
   </span>  
   <span component="$UI/system/components/justep/messageDialog/messageDialog"
     xid="messageDialog1" style="top:252px;left:77px;" type="YesNo" message="确认删除该数据？"
@@ -97,7 +85,7 @@
       <div component="$UI/system/components/fragment/list/listTable" xid="listTable2"
         data="data1"> 
         <div component="$UI/system/components/justep/list/list" class="x-list"
-          xid="list2" data="data1"> 
+          xid="list2" data="data1" limit="-1" autoLoad="true"> 
           <table class="table table-bordered table-hover table-striped" component="$UI/system/components/bootstrap/table/table"
             xid="table2"> 
             <thead xid="thead2"> 
@@ -170,7 +158,7 @@
                 class="x-pagerlimitselect" xid="pagerLimitSelect1" defaultValue="10"> 
                 <span xid="span5">显示</span>  
                 <select component="$UI/system/components/justep/select/select"
-                  class="form-control input-sm" xid="select1"> 
+                  class="form-control input-sm" xid="select1" optionsAutoLoad="false"> 
                   <option value="10" xid="default17">10</option>  
                   <option value="20" xid="default18">20</option>  
                   <option value="50" xid="default19">50</option>  

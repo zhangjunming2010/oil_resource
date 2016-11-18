@@ -19,8 +19,8 @@
       <i xid="i2" class="icon-waterdrop"></i>
       <span xid="span2"> 物资管理</span></a> </li> 
     <li xid="li2" class="list-group-item text-center tb-nopadding hidden-element" style="background-color:#FFFFFF;">
-     <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 人员管理" xid="userBtn" icon="icon-person" onClick="userBtnClick">
-      <i xid="i2" class="icon-person"></i>
+     <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 人员管理" xid="userBtn" icon="icon-person-stalker" onClick="userBtnClick">
+      <i xid="i2" class="icon-person-stalker"></i>
       <span xid="span2">人员管理</span></a> </li> 
     <li xid="li6" class="list-group-item text-center tb-nopadding" style="background-color:#FFFFFF;">
      <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 登出" xid="logoutBtn" icon="icon-log-out" onClick="logoutBtnClick">

@@ -5,7 +5,7 @@
   <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;left:537px;top:307px;"
     onParamsReceive="modelParamsReceive"> 
     <div component="$UI/system/components/justep/data/data" autoLoad="false"
-      xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1"> 
+      xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1" onCustomRefresh="data1CustomRefresh"> 
       <column name="o_id" type="String" xid="xid1"/>  
       <column name="o_cycle" type="Integer" xid="xid2"/>  
       <column name="o_items" type="String" xid="xid3"/>  
