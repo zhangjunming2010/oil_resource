@@ -2,7 +2,7 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:-2px;left:626px;">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:-2px;left:626px;" onModelConstructDone="modelModelConstructDone">
     </div>  
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 
@@ -21,11 +21,11 @@
    <div class="x-col" xid="col2">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
      <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;"><![CDATA[物资编码：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_nbr"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_nbr" bind-keydown="o_nbrKeydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col3" style="width:auto;">
-    <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 获取" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
+    <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-sm btn-only-label" label=" 获取(F2)" xid="searchBtn" icon="icon-android-search" onClick="searchBtnClick">
      <i xid="i2" class="icon-android-search"></i>
-     <span xid="span6"> 获取</span></a> </div> </div>
+     <span xid="span6"> 获取(F2)</span></a> </div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row12">
    <div class="x-col" xid="col17">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit11">
@@ -63,7 +63,7 @@
    <div class="x-col" xid="col12">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
      <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;">批次：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000" bind-keydown="s_batchKeydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col7" style="width:auto;"><span xid="span7" style="font-weight:bold;"><![CDATA[格式：201601]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row7">
    <div class="x-col" xid="col14">
@@ -74,9 +74,9 @@
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>
    <div class="x-col x-col-center" xid="col16" style="text-align:center;">
-    <a component="$UI/system/components/justep/button/button" class="btn btn-default" label=" 保存" xid="submitBtn" icon="dataControl dataControl-save" onClick="submitBtnClick">
+    <a component="$UI/system/components/justep/button/button" class="btn btn-default" label=" 保存(ctrl+s)" xid="submitBtn" icon="dataControl dataControl-save" onClick="submitBtnClick">
      <i xid="i1" class="dataControl dataControl-save"></i>
-     <span xid="span3"> 保存</span></a> </div> 
+     <span xid="span3"> 保存(ctrl+s)</span></a> </div> 
    <div class="x-col" xid="col18"></div></div>
   </div>
    </div></div> 

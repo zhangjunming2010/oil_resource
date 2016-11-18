@@ -5,7 +5,7 @@ define(function(require) {
 	var Model = function() {
 		this.callParent();
 	};
-
+	
 	Model.prototype.modelLoad = function(event) {
 		var usernameid = this.getIDByXID("username");
 		$("#" + usernameid).focus();

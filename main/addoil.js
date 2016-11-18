@@ -10,6 +10,7 @@ define(function(require) {
 		var o_nbrid = this.getIDByXID("o_nbr");
 		var o_nameid = this.getIDByXID("o_name");
 		var s_stockid = this.getIDByXID("s_stock");
+		var itemsEle = this.getElementByXid("o_items");
 		var o_name = this.comp("o_name");
 		var o_cycle = this.comp("o_cycle");
 		var o_use = this.comp("o_use");
@@ -39,13 +40,38 @@ define(function(require) {
 							"type" : "warning"
 						});
 						$(".x-hint").find("button[class='close']").hide();
+						o_name.val(req.o_name);
+						o_cycle.val(req.o_cycle);
+						o_cycle.set({
+							readonly : false
+						});
+						o_use.val(req.o_use);
+						o_use.set({
+							readonly : false
+						});
+						o_life.val(req.o_life);
+						o_life.set({
+							readonly : false
+						});
+						o_items.val(req.o_items);
+						itemsEle.readOnly = false;
 						$("#" + o_nameid).focus();
 					} else {
 						o_name.val(req.o_name);
 						o_cycle.val(req.o_cycle);
+						o_cycle.set({
+							readonly : true
+						});
 						o_use.val(req.o_use);
+						o_use.set({
+							readonly : true
+						});
 						o_life.val(req.o_life);
+						o_life.set({
+							readonly : true
+						});
 						o_items.val(req.o_items);
+						itemsEle.readOnly = true;
 						$("#" + s_stockid).focus();
 					}
 				},
@@ -68,8 +94,8 @@ define(function(require) {
 
 	Model.prototype.submitBtnClick = function(event) {
 		var me = this;
-		var o_itemsid = me.getIDByXID("o_items");
-		$("#" + o_itemsid).blur();
+		var s_batchid = me.getIDByXID("s_batch");
+		$("#" + s_batchid).blur();
 		var o_nbr = me.comp("o_nbr").val();
 		var o_name = me.comp("o_name").val();
 		var o_life = me.comp("o_life").val();
@@ -80,8 +106,8 @@ define(function(require) {
 		var o_items = me.comp("o_items").val();
 		var owner = me.owner;
 		if ((o_nbr !== undefined && o_nbr !== "") && (o_name !== undefined && o_name !== "") && (o_cycle !== undefined && o_cycle !== "") && (o_use !== undefined && o_use !== "")
-				&& (s_batch !== undefined && s_batch !== "") && (s_stock !== undefined && s_stock !== "") 
-				&& (o_items !== undefined && o_items !== "") && (o_items !== undefined && o_items !== "") && (o_life !== undefined && o_life !== "")) {
+				&& (s_batch !== undefined && s_batch !== "") && (s_stock !== undefined && s_stock !== "") && (o_items !== undefined && o_items !== "") && (o_items !== undefined && o_items !== "")
+				&& (o_life !== undefined && o_life !== "")) {
 			$.support.cors = true;
 			$.ajax({
 				url : "http://localhost:8081/OilResources/servlet/addoil", // 请求的url地址
@@ -135,44 +161,29 @@ define(function(require) {
 
 	};
 
-	Model.prototype.input4Focus = function(event) {
-		// $(document).keydown(function(event){
-		// console.log(event.keyCode);
-		// });
-		var searchBtnid = this.getIDByXID("searchBtn");
-		// 判断是否敲击了F2键
-		$(document).keydown(function(e) {
-			if (e.keyCode == 113) {
-				$("#" + searchBtnid).trigger("click");
-			}
-		});
+	Model.prototype.modelModelConstructDone = function(event) {
+		var id = this.getIDByXID("o_nbr");
+		$("#" + id).focus();
 	};
 
-	Model.prototype.textarea1Focus = function(event) {
-		var submitBtnid = this.getIDByXID("submitBtn");
-		// 判断是否敲击了ctrl+s键
-		$(document).keydown(function(e) {
-			if (e.ctrlKey && e.which == 83) {
-				e.preventDefault();
-				$("#" + submitBtnid).trigger("click");
-			}
-		});
+	Model.prototype.o_nbrKeydown = function(event) {
+		if (event.keyCode == 113) {
+			var id = this.getIDByXID("searchBtn");
+			$("#" + id).trigger("click");
+		}
 	};
 
-	// Model.prototype.windowReceiver1Receive = function(event) {
-	// uuid = justep.UUID.createUUID();
-	// var data = this.comp("baasData1");
-	// data.clear();
-	// data.newData({
-	// "defaultValues" : [ {
-	// "O_ID" : uuid,
-	// "O_REVIEW" : 0,
-	// "O_RISK" : 0
-	// } ]
-	// });
-	// var input4id = this.getIDByXID("input4");
-	// $("#" + input4id).focus();
-	// };
+	Model.prototype.s_batchKeydown = function(event) {
+		event = window.event || event;
+		var id = this.getIDByXID("submitBtn");
+		if (event.ctrlKey && event.keyCode == 83) {
+			/* 延迟，兼容FF浏览器 */
+			setTimeout(function() {
+				$("#" + id).trigger("click");
+			}, 1);
+			return false;
+		}
+	};
 
 	return Model;
 });

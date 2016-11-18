@@ -4,18 +4,18 @@
   design="device:m;">  
   <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:292px;left:557px;"
     onModelConstruct="modelModelConstruct"> 
-    <div component="$UI/system/components/justep/data/data" autoLoad="true"
+    <div component="$UI/system/components/justep/data/data" autoLoad="false"
       xid="data1" idColumn="o_id" confirmDelete="false" confirmRefresh="false" limit="-1" onCustomRefresh="data1CustomRefresh"> 
-      <column name="o_id" type="String" xid="xid1"/>  
-      <column name="o_cycle" type="Integer" xid="xid2"/>  
-      <column name="o_items" type="String" xid="xid3"/>  
-      <column name="o_life" type="Integer" xid="xid4"/>  
-      <column name="o_nbr" type="String" xid="xid5"/>  
-      <column name="o_use" type="Float" xid="xid6"/>  
-      <column name="s_batch" type="String" xid="xid7"/>  
-      <column name="s_stock" type="Float" xid="xid8"/>  
-      <column name="o_name" type="String" xid="xid9"/> 
-    </div> 
+      <column name="o_id" type="String" xid="xid1"></column>
+  <column name="o_cycle" type="Integer" xid="xid2"></column>
+  <column name="o_items" type="String" xid="xid3"></column>
+  <column name="o_life" type="Integer" xid="xid4"></column>
+  <column name="o_nbr" type="String" xid="xid5"></column>
+  <column name="o_use" type="Float" xid="xid6"></column>
+  <column name="s_batch" type="String" xid="xid7"></column>
+  <column name="s_stock" type="Float" xid="xid8"></column>
+  <column name="o_name" type="String" xid="xid9"></column>
+  <column name="s_id" type="String" xid="xid10"></column></div> 
   </div>  
   <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1"
     style="top:249px;left:33px;" status="normal" width="50%" height="95%" src="./addoil.w" forceRefreshOnOpen="true" onReceived="windowDialog1Received"> 
@@ -141,9 +141,9 @@
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output7" bind-ref="ref(&quot;o_items&quot;)"/> 
                 </td>  
-                <td xid="td3" style="text-align:center;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="详情" xid="button1">
+                <td xid="td3" style="text-align:center;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="删除" xid="delBtn" onClick="delBtnClick">
    <i xid="i2"></i>
-   <span xid="span2">详情</span></a></td>
+   <span xid="span2">删除</span></a></td>
               </tr> 
             </tbody> 
           </table> 
