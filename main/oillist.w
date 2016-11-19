@@ -40,7 +40,7 @@
               xid="inputGroup4"> 
               <span class="input-group-addon" xid="span17"><![CDATA[物资编号]]></span>  
               <input type="text" class="form-control" component="$UI/system/components/justep/input/input"
-                xid="input4"/> 
+                xid="input4" bind-keydown="input4Keydown"/> 
             </div> 
           </div>  
           <div class="x-col x-col-fixed x-col-center" xid="col16" style="width:auto;"> 
@@ -48,7 +48,7 @@
               xid="inputGroup5"> 
               <span class="input-group-addon" xid="span16"><![CDATA[物资批次]]></span>  
               <input type="text" class="form-control" component="$UI/system/components/justep/input/input"
-                xid="input5"/> 
+                xid="input5" bind-keydown="input5Keydown"/> 
             </div> 
           </div>  
           <div class="x-col x-col-fixed x-col-center" xid="col17" style="width:auto;"> 
@@ -56,7 +56,7 @@
               xid="inputGroup6"> 
               <span class="input-group-addon" xid="span13">项目标签</span>  
               <input type="text" class="form-control" component="$UI/system/components/justep/input/input"
-                xid="input6"/>  
+                xid="input6" bind-keydown="input6Keydown"/>  
               <div class="input-group-btn" xid="layoutWizard1"> 
                 <a component="$UI/system/components/justep/button/button"
                   class="btn btn-default btn-only-icon" label="button" xid="searchBtn"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" component="$UI/system/components/justep/window/window" design="device:m;" xid="window" class="window">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="top:420px;left:63px;height:auto;" onParamsReceive="modelParamsReceive"> 
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:433px;left:250px;" onParamsReceive="modelParamsReceive"> 
   <div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="userData" queryAction="queryUser_info" saveAction="saveUser_info" url="/osews/os" tableName="user_info" idColumn="U_ID"><column label="U_ID" name="U_ID" type="String" xid="default1"></column>
   <column label="U_NAME" name="U_NAME" type="String" xid="default2"></column>
   <column label="U_PWD" name="U_PWD" type="String" xid="default3"></column>
   <column label="U_AUTH" name="U_AUTH" type="Integer" xid="default4"></column></div></div>  
-  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" title="恭喜" message="恭喜！注册成功！" onOK="messageDialog1OK"></span>
+  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" title="提示" onOK="messageDialog1OK"></span>
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-content" xid="content1">
     <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel2">

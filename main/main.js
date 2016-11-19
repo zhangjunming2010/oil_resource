@@ -27,5 +27,38 @@ define(function(require){
 		});
 	};
 
+	Model.prototype.input4Keydown = function(event){
+		var input4id = this.getIDByXID("input4");
+		var id = this.getIDByXID("searchBtn");
+		// 判断是否敲击了Enter键
+		if (event.keyCode == 13) {
+			$("#" + input4id).blur();
+			$("#" + id).trigger("click");
+			$("#" + input4id).focus();
+		}
+	};
+
+	Model.prototype.input5Keydown = function(event){
+		var input5id = this.getIDByXID("input5");
+		var id = this.getIDByXID("searchBtn");
+		// 判断是否敲击了Enter键
+		if (event.keyCode == 13) {
+			$("#" + input5id).blur();
+			$("#" + id).trigger("click");
+			$("#" + input5id).focus();
+		}
+	};
+
+	Model.prototype.input6Keydown = function(event){
+		var input6id = this.getIDByXID("input6");
+		var id = this.getIDByXID("searchBtn");
+		// 判断是否敲击了Enter键
+		if (event.keyCode == 13) {
+			$("#" + input6id).blur();
+			$("#" + id).trigger("click");
+			$("#" + input6id).focus();
+		}
+	};
+
 	return Model;
 });

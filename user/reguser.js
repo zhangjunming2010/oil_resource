@@ -18,7 +18,7 @@ define(function(require) {
 			if (u_pwd == u_pwd2) {
 				$.support.cors = true;
 				$.ajax({
-					url : "http://172.26.3.30:8081/OilResources/servlet/register", // 请求的url地址
+					url : "http://localhost:8081/OilResources/servlet/register", // 请求的url地址
 					dataType : "json", // 返回格式为json
 					async : true, // 请求是否异步，默认为异步，这也是ajax重要特性
 					data : {
@@ -42,7 +42,9 @@ define(function(require) {
 							});
 							$(".x-hint").find("button[class='close']").hide();
 						} else {
-							messageDialog.show();
+							messageDialog.show({
+								"message":desc
+							});
 						}
 					},
 					complete : function() {

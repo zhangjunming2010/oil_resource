@@ -7,7 +7,7 @@
   <column name="name" type="String" xid="xid2"></column>
   <column name="value" type="Integer" xid="xid3"></column>
   <data xid="default1">[{&quot;id&quot;:1,&quot;name&quot;:&quot;普通用户&quot;,&quot;value&quot;:0},{&quot;id&quot;:2,&quot;name&quot;:&quot;维护人员&quot;,&quot;value&quot;:1},{&quot;id&quot;:3,&quot;name&quot;:&quot;后台管理员&quot;,&quot;value&quot;:2}]</data></div>
-  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data2" idColumn="u_id"><column name="u_id" type="String" xid="xid4"></column>
+  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data2" idColumn="u_id" onCustomRefresh="data2CustomRefresh"><column name="u_id" type="String" xid="xid4"></column>
   <column name="u_auth" type="Integer" xid="xid5"></column>
   <column name="u_name" type="String" xid="xid6"></column>
   <column name="u_pwd" type="String" xid="xid7"></column></div></div>  
@@ -42,7 +42,7 @@
               xid="inputGroup1"> 
               <span class="input-group-addon" xid="span11"><![CDATA[姓名]]></span>  
               <input type="text" class="form-control" component="$UI/system/components/justep/input/input"
-                xid="input1"/>  
+                xid="input1" bind-keydown="input1Keydown"/>  
               <div class="input-group-btn" xid="div1"> 
                 <a component="$UI/system/components/justep/button/button"
                   class="btn btn-default btn-only-icon" label="button" xid="searchBtn"
@@ -65,7 +65,7 @@
             <thead xid="thead2"> 
               <tr xid="tr5" class="info"> 
                 <th xid="col13" style="text-align:center;vertical-align:middle;"><![CDATA[用户名]]></th>  
-                <th xid="col14" style="text-align:center;vertical-align:middle;"><![CDATA[用户姓名]]></th>  
+                <th xid="col14" style="text-align:center;vertical-align:middle;"><![CDATA[姓名]]></th>  
                 <th xid="col1" style="text-align:center;font-weight:bold;vertical-align:middle;width:8%;"
                   class="hidden-element">操作</th> 
               </tr> 

@@ -41,7 +41,9 @@ define(function(require) {
 
 	Model.prototype.loginBtnClick = function(event) {
 		var owner = this.owner;
+		var usernameid = this.getIDByXID("username");
 		var pwdid = this.getIDByXID("pwd");
+		$("#" + usernameid).blur();
 		$("#" + pwdid).blur();
 		var name = this.comp("username").val();
 		var pwd = this.comp("pwd").val();
@@ -53,6 +55,7 @@ define(function(require) {
 				"type" : "warning"
 			});
 			$(".x-hint").find("button[class='close']").hide();
+			$("#" + usernameid).focus();
 		} else {
 			if (pwd === "") {
 				justep.Util.hint("请输入密码！", {
@@ -61,6 +64,7 @@ define(function(require) {
 					"type" : "warning"
 				});
 				$(".x-hint").find("button[class='close']").hide();
+				$("#" + pwdid).focus();
 			} else {
 				$.support.cors = true;
 				$.ajax({
@@ -71,7 +75,7 @@ define(function(require) {
 						"u_id" : name,
 						"u_pwd" : pwd
 					}, // 参数值
-					type : "get", // 请求方式
+					type : "get", //请求方式
 					beforeSend : function() {
 						// 请求前的处理
 						loginBtn.set({

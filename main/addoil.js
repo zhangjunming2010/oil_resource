@@ -137,7 +137,6 @@ define(function(require) {
 							"type" : "warning"
 						});
 						$(".x-hint").find("button[class='close']").hide();
-						$("#" + o_itemsid).focus();
 					} else {
 						owner.send("ok");
 						me.close();

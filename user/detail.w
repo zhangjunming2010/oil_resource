@@ -40,4 +40,4 @@
    <span xid="span2">提交</span></a></div>
    <div class="x-col" xid="col3"></div></div></div>
 <span component="$UI/system/components/justep/windowReceiver/windowReceiver" xid="windowReceiver1" onReceive="windowReceiver1Receive"></span>
-  </div>
+  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:266px;left:97px;" onOK="messageDialog1OK"></span></div>
