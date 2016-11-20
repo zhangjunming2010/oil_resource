@@ -1,6 +1,6 @@
 define(function(require) {
 	var $ = require("jquery");
-	// var justep = require("$UI/system/lib/justep");
+//	var justep = require("$UI/system/lib/justep");
 	
 	var Model = function() {
 		this.callParent();
@@ -148,6 +148,17 @@ define(function(require) {
 			$("#" + id).trigger("click");
 			$("#" + input6id).focus();
 		}
+	};
+
+	Model.prototype.tr6Dblclick = function(event){
+		var row = event.bindingContext.$object;
+		var url = require.toUrl("./editoil.w");
+		this.comp("windowDialog1").open({
+			src: url,
+			params:{
+				rowdata:row.toJson()
+			}
+		});
 	};
 
 	return Model;

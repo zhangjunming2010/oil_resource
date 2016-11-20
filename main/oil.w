@@ -108,7 +108,7 @@
               </tr> 
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
-              <tr xid="tr6"> 
+              <tr xid="tr6" bind-dblclick="tr6Dblclick"> 
                 <td xid="td13" style="text-align:center;"> 
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output1" bind-ref="ref(&quot;o_nbr&quot;)"/> 

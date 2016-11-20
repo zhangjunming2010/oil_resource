@@ -11,9 +11,9 @@
         class="x-control-group" title="新增油料" xid="controlGroup1" collapsible="true"> 
           
         <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel2">
-   <div class="x-panel-top" xid="top1"><div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" title="新增油料">
+   <div class="x-panel-top" xid="top1"><div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" title="新增物资">
    <div class="x-titlebar-left" xid="left1"></div>
-   <div class="x-titlebar-title" xid="title1">新增油料</div>
+   <div class="x-titlebar-title" xid="title1">新增物资</div>
    <div class="x-titlebar-right reverse" xid="right1"><a component="$UI/system/components/justep/button/button" class="btn btn-link btn-only-icon" label=" 关闭" xid="closeBtn" icon="icon-android-close" onClick='{"operation":"window.close"}'>
      <i xid="i3" class="icon-android-close"></i>
      <span xid="span4">关闭</span></a></div></div></div>
@@ -63,13 +63,13 @@
    <div class="x-col" xid="col12">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
      <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;">批次：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000" bind-keydown="s_batchKeydown"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col7" style="width:auto;"><span xid="span7" style="font-weight:bold;"><![CDATA[格式：201601]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row7">
    <div class="x-col" xid="col14">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit8">
      <label class="x-label" xid="label8" style="text-align:center;font-weight:bold;">项目标签：</label>
-     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="o_items" style="height:100%;"></textarea></div> </div> 
+     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="o_items" style="height:100%;" bind-keydown="Keydown"></textarea></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col13" style="width:auto;"><span xid="span8" style="font-weight:bold;"><![CDATA[说明：多个项目中间空格隔开]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>

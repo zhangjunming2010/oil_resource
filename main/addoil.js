@@ -172,7 +172,7 @@ define(function(require) {
 		}
 	};
 
-	Model.prototype.s_batchKeydown = function(event) {
+	Model.prototype.Keydown = function(event) {
 		event = window.event || event;
 		var id = this.getIDByXID("submitBtn");
 		if (event.ctrlKey && event.keyCode == 83) {

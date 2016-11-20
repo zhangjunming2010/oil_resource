@@ -54,7 +54,6 @@ define(function(require){
 		var u_name = this.comp("input1").val();
 		var u_auth = this.comp("select2").val();
 		var data = this.comp("data2");
-		data.clear();
 		$.support.cors = true;
 		$.ajax({
 			url : "http://localhost:8081/OilResources/servlet/searchuser", // 请求的url地址
@@ -72,6 +71,7 @@ define(function(require){
 			},
 			success : function(req) {
 				// 请求成功时处理
+				data.clear();
 				data.loadData(req);
 			},
 			complete : function() {
@@ -83,15 +83,39 @@ define(function(require){
 		});
 	};
 	
-	var row;
+	var row = "";
 	Model.prototype.delBtnClick = function(event){
 		row = event.bindingContext.$object;
 		this.comp("messageDialog1").show();
 	};
 
 	Model.prototype.messageDialog1Yes = function(event){
-		this.comp("baasData1").deleteData(row);
-		this.comp("baasData1").saveData();
+		var data = this.comp("data2");
+		var u_id = row.toJson().userdata.id.value;
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/OilResources/servlet/deluser", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				"u_id" : u_id
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.clear();
+				data.refreshData();
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});
 	};
 
 	Model.prototype.input1Keydown = function(event){

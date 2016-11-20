@@ -107,13 +107,6 @@ define(function(require) {
 						});
 					},
 					error : function() {
-						// 请求出错处理
-						justep.Util.hint("登录异常，请稍后尝试！", {
-							"delay" : 1000,
-							"position" : "middle",
-							"type" : "danger"
-						});
-						$(".x-hint").find("button[class='close']").hide();
 					}
 				});
 			}

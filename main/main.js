@@ -60,5 +60,15 @@ define(function(require){
 		}
 	};
 
+	Model.prototype.button1Click = function(event){
+		var row = event.bindingContext.$object;
+		
+	};
+
+	Model.prototype.button2Click = function(event){
+		var row = event.bindingContext.$object;
+		
+	};
+
 	return Model;
 });
