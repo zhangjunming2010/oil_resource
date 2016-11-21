@@ -10,8 +10,8 @@
   <div component="$UI/system/components/justep/contents/contents" class="x-contents x-full" active="0" xid="contents1">
    <div class="x-contents-content background" xid="content1"><div xid="div8" class="div-login">
    <div class="list-group" xid="listGroup1">
-    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" title="油料采购预警系统" style="font-weight:bolder;font-size:x-large;">
-     <div class="x-titlebar-title" xid="title1">油料采购预警系统</div></div> 
+    <div component="$UI/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" title="物资采购预警系统" style="font-weight:bolder;font-size:x-large;">
+     <div class="x-titlebar-title" xid="title1">物资采购预警系统</div></div> 
     <div xid="div12" class="list-group-item">
      <div class="input-group" component="$UI/system/components/bootstrap/inputGroup/inputGroup" xid="inputGroup4">
       <span class="input-group-addon" xid="span2">账号</span>

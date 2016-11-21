@@ -49,7 +49,7 @@
    <div class="x-col" xid="col4">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
      <label class="x-label" xid="label2" style="text-align:center;font-weight:bold;">保质期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" format="0,000" dataType="Integer"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" dataType="Integer"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col1" style="width:auto;">
     <span xid="span2" style="font-weight:bold;">单位：月</span>
   </div> </div>
@@ -63,7 +63,7 @@
    <div class="x-col" xid="col12">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
      <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;">批次：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" format="0,000" bind-keydown="Keydown"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" bind-keydown="Keydown" maxLength="6"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col7" style="width:auto;"><span xid="span7" style="font-weight:bold;"><![CDATA[格式：201601]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row7">
    <div class="x-col" xid="col14">

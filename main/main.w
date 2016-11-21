@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window" design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:333px;left:578px;"><div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="o_id" onBeforeRefresh="baasData1BeforeRefresh"><column label="o_id" name="o_id" type="String" xid="default1"></column>
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:333px;left:578px;" onModelConstructDone="modelModelConstructDone" onunLoad="modelUnLoad"><div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="o_id" onBeforeRefresh="baasData1BeforeRefresh"><column label="o_id" name="o_id" type="String" xid="default1"></column>
   <column label="o_cycle" name="o_cycle" type="Integer" xid="default2"></column>
   <column label="o_items" name="o_items" type="String" xid="default3"></column>
   <column label="o_life" name="o_life" type="Integer" xid="default4"></column>
@@ -20,7 +20,7 @@
   <column label="o_risk" name="o_risk" type="String" xid="default9"></column>
   <column label="o_use" name="o_use" type="Float" xid="default10"></column>
   <column label="o_name" name="o_name" type="String" xid="xid2"></column></div></div> 
-<div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
+<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:356px;left:107px;" showTitle="false" status="normal" forceRefreshOnOpen="false" width="50%" height="65%" onClose="windowDialog2Close"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-top" xid="top1" height="85"><div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1">
    <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
     <div class="x-col" xid="col7"></div>
@@ -89,4 +89,4 @@
    <i xid="i2" class="icon-android-close"></i>
    <span xid="span5">取消预警</span></a></div></div> </li> </ul> </div></div> </div></div>
    </div>
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="./oillist.w" status="normal" width="98%" showTitle="true" title="检索信息" height="90%" style="top:382px;left:100px;"></span></div>
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="./oillist.w" status="normal" width="98%" showTitle="true" title="检索信息" height="90%" style="top:356px;left:44px;"></span></div>
