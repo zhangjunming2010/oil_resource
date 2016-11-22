@@ -6,14 +6,6 @@ define(function(require) {
 		this.callParent();
 	};
 
-	Model.prototype.baasData1BeforeRefresh = function(event) {
-		this.comp("baasData1").setFilter("filter1", "O_REVIEW <> ' '");
-	};
-
-	Model.prototype.baasData2BeforeRefresh = function(event) {
-		this.comp("baasData2").setFilter("filter1", "O_RISK <> ' '");
-	};
-
 	Model.prototype.searchBtnClick = function(event) {
 		var o_nbr = this.comp("input4").val();
 		var s_batch = this.comp("input5").val();
@@ -83,23 +75,31 @@ define(function(require) {
 	};
 
 	Model.prototype.windowDialog2Close = function(event) {
-		this.comp("baasData1").refreshData();
-		this.comp("baasData2").refreshData();
+		this.comp("reviewData").refreshData();
+		this.comp("riskData").refreshData();
 	};
 	
 	var timer = "";
 	
 	Model.prototype.modelModelConstructDone = function(event){
-		var data1 = this.comp("baasData1");
-		var data2 = this.comp("baasData2");
+		var reviewData = this.comp("reviewData");
+		var riskData = this.comp("riskData");
 		timer = setInterval(function(){
-			data1.refreshData();
-			data2.refreshData();
+			reviewData.refreshData();
+			riskData.refreshData();
 		},30000);
 	};
 
 	Model.prototype.modelUnLoad = function(event){
 		clearInterval(timer);
+	};
+
+	Model.prototype.reviewDataCustomRefresh = function(event){
+		
+	};
+
+	Model.prototype.riskDataCustomRefresh = function(event){
+
 	};
 
 	return Model;

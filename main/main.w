@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window" design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:333px;left:578px;" onModelConstructDone="modelModelConstructDone" onunLoad="modelUnLoad"><div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="baasData1" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="o_id" onBeforeRefresh="baasData1BeforeRefresh"><column label="o_id" name="o_id" type="String" xid="default1"></column>
-  <column label="o_cycle" name="o_cycle" type="Integer" xid="default2"></column>
-  <column label="o_items" name="o_items" type="String" xid="default3"></column>
-  <column label="o_life" name="o_life" type="Integer" xid="default4"></column>
-  <column label="o_nbr" name="o_nbr" type="String" xid="default5"></column>
-  <column label="o_review" name="o_review" type="String" xid="default6"></column>
-  <column label="o_risk" name="o_risk" type="String" xid="default7"></column>
-  <column label="o_use" name="o_use" type="Float" xid="default8"></column>
-  <column label="o_name" name="o_name" type="String" xid="xid1"></column></div>
-  <div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="baasData2" queryAction="queryOil_resource" saveAction="saveOil_resource" url="/osews/os" tableName="oil_resource" idColumn="o_id" onBeforeRefresh="baasData2BeforeRefresh">
-   <column label="o_id" name="o_id" type="String" xid="default15"></column>
-  <column label="o_cycle" name="o_cycle" type="Integer" xid="default16"></column>
-  <column label="o_items" name="o_items" type="String" xid="default13"></column>
-  <column label="o_life" name="o_life" type="Integer" xid="default14"></column>
-  <column label="o_nbr" name="o_nbr" type="String" xid="default11"></column>
-  <column label="o_review" name="o_review" type="String" xid="default12"></column>
-  <column label="o_risk" name="o_risk" type="String" xid="default9"></column>
-  <column label="o_use" name="o_use" type="Float" xid="default10"></column>
-  <column label="o_name" name="o_name" type="String" xid="xid2"></column></div></div> 
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:265px;left:605px;" onModelConstructDone="modelModelConstructDone" onunLoad="modelUnLoad">
+  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="reviewData" idColumn="o_id" onCustomRefresh="reviewDataCustomRefresh"><column name="o_id" type="String" xid="xid1"></column>
+  <column name="o_nbr" type="String" xid="xid2"></column>
+  <column name="o_name" type="String" xid="xid3"></column>
+  <column name="o_items" type="String" xid="xid4"></column>
+  <column name="s_id" type="String" xid="xid5"></column>
+  <column name="s_review" type="String" xid="xid6"></column></div>
+  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="riskData" idColumn="o_id" onCustomRefresh="riskDataCustomRefresh"><column name="o_id" type="String" xid="xid7"></column>
+  <column name="o_nbr" type="String" xid="xid8"></column>
+  <column name="o_name" type="String" xid="xid9"></column>
+  <column name="o_risk" type="String" xid="xid10"></column>
+  <column name="o_items" type="String" xid="xid11"></column></div></div> 
 <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:356px;left:107px;" showTitle="false" status="normal" forceRefreshOnOpen="false" width="35%" height="65%" onClose="windowDialog2Close"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-top" xid="top1" height="85"><div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1">
    <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
@@ -45,7 +38,7 @@
    <div class="x-panel-content" xid="content1"><div component="$UI/system/components/bootstrap/row/row" class="row" xid="row1">
    <div class="col col-xs-6" xid="col2">
     <div component="$UI/system/components/justep/bar/bar" class="x-bar" xid="bar3" style="height:35;"><span xid="span6" class="center"><![CDATA[复验预警]]></span></div>
-  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list1" data="baasData1">
+  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list1" data="reviewData">
    <ul class="x-list-template x-min-height list-group" xid="listTemplateUl1" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1">
     <li xid="li1" style="width:auto;" class="x-min-height list-group-item" componentname="li(html)" id="undefined_li1"><div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row2" style="height:75px;">
    <div class="x-col x-col-fixed x-col-center" xid="col1" style="width:auto;"><img src="../img/foil.png" alt="" xid="image1"></img></div>
@@ -65,7 +58,7 @@
    <span xid="span4"> 取消预警</span></a></div></div></li></ul> </div></div> 
    <div class="col col-xs-6" xid="col3">
     <div component="$UI/system/components/justep/bar/bar" class="x-bar" xid="bar2" style="height:35;"><span xid="span7" class="center"><![CDATA[库存预警]]></span></div>
-  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list2" data="baasData2">
+  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list2" data="riskData">
    <ul class="x-list-template x-min-height list-group" xid="listTemplateUl5" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1">
     <li xid="li5" style="width:auto;" class="x-min-height list-group-item" componentname="li(html)" id="undefined_li1">
      <div component="$UI/system/components/justep/row/row" class="x-row x-row-center" xid="row14" style="height:75px;">
