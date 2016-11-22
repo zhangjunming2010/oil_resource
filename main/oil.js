@@ -55,7 +55,7 @@ define(function(require) {
 		data.clear();
 		$.support.cors = true;
 		$.ajax({
-			url : "http://localhost:8081/OilResources/servlet/searchoil", // 请求的url地址
+			url : "http://localhost:8081/oil_resource_back/servlet/searchoil", // 请求的url地址
 			dataType : "json", // 返回格式为json
 			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
@@ -93,7 +93,7 @@ define(function(require) {
 		var s_id = row.toJson().s_id.value;
 		$.support.cors = true;
 		$.ajax({
-			url : "http://localhost:8081/OilResources/servlet/deloil", // 请求的url地址
+			url : "http://localhost:8081/oil_resource_back/servlet/deloil", // 请求的url地址
 			dataType : "json", // 返回格式为json
 			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
