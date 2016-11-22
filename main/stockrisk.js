@@ -1,22 +1,22 @@
-define(function(require){
+define(function(require) {
 	var $ = require("jquery");
-//	var justep = require("$UI/system/lib/justep");
-	
-	var Model = function(){
+	var justep = require("$UI/system/lib/justep");
+
+	var Model = function() {
 		this.callParent();
 	};
 
 	var o_nbr = "";
 	var sum = 0;
-	
-	Model.prototype.windowReceiver1Receive = function(event){
+
+	Model.prototype.windowReceiver1Receive = function(event) {
 		o_nbr = event.params.o_nbr;
 		var data = this.comp("data1");
 		data.clear();
-		data.refreshData();	
+		data.refreshData();
 	};
 
-	Model.prototype.data1CustomRefresh = function(event){
+	Model.prototype.data1CustomRefresh = function(event) {
 		var data = this.comp("data1");
 		data.clear();
 		$.support.cors = true;
@@ -44,31 +44,32 @@ define(function(require){
 				// 请求出错处理
 			}
 		});
-		sum = 0 ;
-		data.each(function(param) {
-			var row = param.row;
-			sum = sum + row.val("s_stock");
-		});
-		this.comp("output1").set({"value":sum+" KG"});
+		sum = 0;
 	};
 
-	Model.prototype.updateBtnClick = function(event){
-		var row = event.bindingContext.$object;
-		var o_nbr = row.toJson().o_nbr.value;
-		var s_id = row.toJson().s_id.value;
-		var s_stock = row.toJson().s_stock.value;
+	Model.prototype.updateBtnClick = function(event) {
+		var risksum = document.getElementById("risksum").innerHTML;
 		var data = this.comp("data1");
-		data.clear();
+		var datas = [];
+		var o_nbr = data.getValue("o_nbr");
+		data.each(function(param) {
+			var row = param.row;
+			var obj = new Object();
+			var s_id = row.val("s_id");
+			var s_stock = row.val("s_stock");
+			obj.s_id = s_id;
+			obj.s_stock = s_stock;
+			datas.push(obj);
+		});
 		$.support.cors = true;
 		$.ajax({
 			url : "http://localhost:8081/OilResources/servlet/updatestock", // 请求的url地址
 			dataType : "json", // 返回格式为json
 			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
 			data : {
-				"s_id" : s_id,
-				"s_stock" : s_stock,
-				"o_nbr" : o_nbr,
-				"sum" : sum
+				"datas" : JSON.stringify(datas),
+				"risksum" : risksum,
+				"o_nbr" : o_nbr
 			}, // 参数值
 			type : "get", // 请求方式
 			beforeSend : function() {
@@ -80,6 +81,12 @@ define(function(require){
 			},
 			complete : function() {
 				// 请求完成的处理
+				justep.Util.hint("更新完成！", {
+					"delay" : 1000,
+					"position" : "middle",
+					"type" : "info"
+				});
+				$(".x-hint").find("button[class='close']").hide();
 			},
 			error : function() {
 				// 请求出错处理
