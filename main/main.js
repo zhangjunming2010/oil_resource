@@ -58,7 +58,9 @@ define(function(require) {
 
 	Model.prototype.button2Click = function(event) {
 		var row = event.bindingContext.$object;
-		var o_nbr = row.toJson().o_nbr.value;
+		var o_nbr = row.val("o_nbr");
+		var o_id = row.val("o_id");
+		var risksum = row.val("risksum");
 		var winDialog = this.comp("windowDialog2");
 		var url = require.toUrl("./stockrisk.w");
 		winDialog.set({
@@ -68,7 +70,8 @@ define(function(require) {
 		winDialog.open({
 			src : url,
 			params : {
-				o_nbr : o_nbr
+				"o_id" : o_id,
+				"risksum" : risksum
 			}
 		});
 	};
@@ -95,6 +98,30 @@ define(function(require) {
 
 	Model.prototype.reviewDataCustomRefresh = function(event){
 		var data = this.comp("reviewData");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/oil_resource_back/servlet/review", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});var data = this.comp("reviewData");
 		data.clear();
 		$.support.cors = true;
 		$.ajax({

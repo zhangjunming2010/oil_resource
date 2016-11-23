@@ -2,7 +2,7 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:-2px;left:626px;" onModelConstructDone="modelModelConstructDone">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:50px;left:469px;" onModelConstructDone="modelModelConstructDone">
     </div>  
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"
     xid="panel1"> 

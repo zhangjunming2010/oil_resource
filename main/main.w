@@ -12,7 +12,8 @@
   <column name="o_nbr" type="String" xid="xid8"></column>
   <column name="o_name" type="String" xid="xid9"></column>
   <column name="o_risk" type="String" xid="xid10"></column>
-  <column name="o_items" type="String" xid="xid11"></column></div></div> 
+  <column name="o_items" type="String" xid="xid11"></column>
+  <column name="risksum" type="Float" xid="xid12"></column></div></div> 
 <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:356px;left:107px;" showTitle="false" status="normal" forceRefreshOnOpen="false" width="35%" height="65%" onClose="windowDialog2Close"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-top" xid="top1" height="85"><div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1">
    <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
@@ -53,7 +54,7 @@
    </div>
   </div>
   <div class="x-col x-col-center" xid="col24"><span xid="span1" style="color:#FF0000;"><![CDATA[信息：]]></span>
-  <span xid="span3" bind-text='val("s_review")'></span></div>
+  <span xid="span3" bind-text='val("s_review")' style="color:#FF0000;"></span></div>
   <div class="x-col x-col-fixed x-col-center" xid="col4" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button1" icon="icon-android-close" onClick="button1Click">
    <i xid="i1" class="icon-android-close"></i>
    <span xid="span4"> 取消预警</span></a></div></div></li></ul> </div></div> 
@@ -79,7 +80,7 @@
           <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output17" bind-ref='ref("o_items")'></div></div> </div> </div> </div> 
       <div class="x-col x-col-center" xid="col37">
        <span xid="span2" style="color:#FF0000;"><![CDATA[信息：]]></span>
-  <span xid="span8" bind-text='val("o_risk")'></span></div> 
+  <span xid="span8" bind-text='val("o_risk")' style="color:#FF0000;"></span></div> 
   <div class="x-col x-col-fixed x-col-center" xid="col5" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button2" icon="icon-android-close" onClick="button2Click">
    <i xid="i2" class="icon-android-close"></i>
    <span xid="span5">取消预警</span></a></div></div> </li> </ul> </div></div> </div></div>
