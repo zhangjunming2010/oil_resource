@@ -54,7 +54,6 @@ define(function(require) {
 
 	Model.prototype.button1Click = function(event) {
 		var row = event.bindingContext.$object;
-
 	};
 
 	Model.prototype.button2Click = function(event) {
@@ -95,11 +94,59 @@ define(function(require) {
 	};
 
 	Model.prototype.reviewDataCustomRefresh = function(event){
-		
+		var data = this.comp("reviewData");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/oil_resource_back/servlet/review", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});
 	};
 
 	Model.prototype.riskDataCustomRefresh = function(event){
-
+		var data = this.comp("riskData");
+		data.clear();
+		$.support.cors = true;
+		$.ajax({
+			url : "http://localhost:8081/oil_resource_back/servlet/risk", // 请求的url地址
+			dataType : "json", // 返回格式为json
+			async : false, // 请求是否异步，默认为异步，这也是ajax重要特性
+			data : {
+				
+			}, // 参数值
+			type : "get", // 请求方式
+			beforeSend : function() {
+				// 请求前的处理
+			},
+			success : function(req) {
+				// 请求成功时处理
+				data.loadData(req);
+			},
+			complete : function() {
+				// 请求完成的处理
+			},
+			error : function() {
+				// 请求出错处理
+			}
+		});
 	};
 
 	return Model;

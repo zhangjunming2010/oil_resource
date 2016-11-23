@@ -52,7 +52,7 @@
    <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output9" bind-ref='ref("o_items")'></div></div></div>
    </div>
   </div>
-  <div class="x-col x-col-center" xid="col24"><span xid="span1" bind-text='"预警信息：" +  val("o_review")' style="color:#FF0000;"></span></div>
+  <div class="x-col x-col-center" xid="col24"><span xid="span1" bind-text='"预警信息：" +  val("s_review")' style="color:#FF0000;"></span></div>
   <div class="x-col x-col-fixed x-col-center" xid="col4" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button1" icon="icon-android-close" onClick="button1Click">
    <i xid="i1" class="icon-android-close"></i>
    <span xid="span4"> 取消预警</span></a></div></div></li></ul> </div></div> 
