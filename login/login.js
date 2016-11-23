@@ -96,7 +96,7 @@ define(function(require) {
 							$(".x-hint").find("button[class='close']").hide();
 						} else {
 							sessionStorage.u_auth = req.code;
-							owner.send("ok");
+							owner.send(req.code);
 						}
 					},
 					complete : function() {
