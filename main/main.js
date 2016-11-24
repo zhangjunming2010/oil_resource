@@ -54,6 +54,20 @@ define(function(require) {
 
 	Model.prototype.button1Click = function(event) {
 		var row = event.bindingContext.$object;
+		var s_id = row.val("s_id");
+		var winDialog = this.comp("windowDialog2");
+		var url = require.toUrl("./reviewrisk.w");
+		winDialog.set({
+			"showTitle" : false,
+			"height" : "13%",
+			"width" : "30%"
+		});
+		winDialog.open({
+			src : url,
+			params : {
+				"s_id" : s_id
+			}
+		});
 	};
 
 	Model.prototype.button2Click = function(event) {
@@ -140,7 +154,6 @@ define(function(require) {
 				// 请求前的处理
 			},
 			success : function(req) {
-				console.log(req);
 				// 请求成功时处理
 				data.loadData(req);
 			},

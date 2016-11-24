@@ -14,7 +14,7 @@
   <column name="o_risk" type="String" xid="xid10"></column>
   <column name="o_items" type="String" xid="xid11"></column>
   <column name="risksum" type="Float" xid="xid12"></column></div></div> 
-<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:356px;left:107px;" showTitle="false" status="normal" forceRefreshOnOpen="false" width="35%" height="65%" onClose="windowDialog2Close"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
+<span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog2" style="top:356px;left:107px;" showTitle="false" status="normal" forceRefreshOnOpen="true" width="35%" height="65%" onClose="windowDialog2Close"></span><div component="$UI/system/components/justep/panel/panel" class="x-panel x-full" xid="panel1">
    <div class="x-panel-top" xid="top1" height="85"><div component="$UI/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1">
    <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
     <div class="x-col" xid="col7"></div>
