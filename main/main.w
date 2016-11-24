@@ -80,7 +80,7 @@
           <div component="$UI/system/components/justep/output/output" class="x-output x-edit" xid="output17" bind-ref='ref("o_items")'></div></div> </div> </div> </div> 
       <div class="x-col x-col-center" xid="col37">
        <span xid="span2" style="color:#FF0000;"><![CDATA[信息：]]></span>
-  <span xid="span8" bind-text='val("o_risk")' style="color:#FF0000;"></span></div> 
+  <span xid="span8" bind-text=' val("o_risk")' style="color:#FF0000;"></span></div> 
   <div class="x-col x-col-fixed x-col-center" xid="col5" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button2" icon="icon-android-close" onClick="button2Click">
    <i xid="i2" class="icon-android-close"></i>
    <span xid="span5">取消预警</span></a></div></div> </li> </ul> </div></div> </div></div>

@@ -40,4 +40,4 @@
    <div class="x-panel-content" xid="content2"><div component="$UI/system/components/justep/windowContainer/windowContainer" class="x-window-container" xid="windowContainer1" src="../main/main.w" routable="true" autoLoad="false"></div></div>
    </div></div> 
    </div>
-  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:315px;left:184px;" title="提示" message="确认退出该系统？" type="YesNo" onYes="messageDialog1Yes"></span><span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:229px;left:62px;" src="../index.w"></span></div>
+  <span component="$UI/system/components/justep/messageDialog/messageDialog" xid="messageDialog1" style="top:315px;left:184px;" title="提示" message="确认退出该系统？" type="YesNo" onYes="messageDialog1Yes"></span><span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" style="top:229px;left:62px;" src="../index.w" forceRefreshOnOpen="true"></span></div>

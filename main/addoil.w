@@ -57,7 +57,7 @@
    <div class="x-col" xid="col6">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit5">
      <label class="x-label" xid="label5" style="text-align:center;font-weight:bold;">库存量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_stock" maxLength="10" format="0,000.00" dataType="Float"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_stock" maxLength="10" format="0,000.00" dataType="Float" bind-keydown="s_stockKeydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col5" style="width:auto;"><span xid="span5" style="font-weight:bold;"><![CDATA[单位：KG]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row6">
    <div class="x-col" xid="col12">

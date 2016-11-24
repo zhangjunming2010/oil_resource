@@ -184,5 +184,17 @@ define(function(require) {
 		}
 	};
 
+	Model.prototype.s_stockKeydown = function(event){
+		event = window.event || event;
+		var id = this.getIDByXID("submitBtn");
+		if (event.ctrlKey && event.keyCode == 83) {
+			/* 延迟，兼容FF浏览器 */
+			setTimeout(function() {
+				$("#" + id).trigger("click");
+			}, 1);
+			return false;
+		}
+	};
+
 	return Model;
 });
