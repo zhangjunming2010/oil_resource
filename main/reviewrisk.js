@@ -15,7 +15,6 @@ define(function(require) {
 
 	Model.prototype.updateBtnClick = function(event) {
 		var windowReceiver1 = this.comp("windowReceiver1");
-		
 		var s_life = this.comp("s_life").val();
 		if (s_life > 0) {
 			$.support.cors = true;
