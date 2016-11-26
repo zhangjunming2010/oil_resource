@@ -1,5 +1,5 @@
 define(function(require){
-	var $ = require("jquery");
+//	var $ = require("jquery");
 //	var justep = require("$UI/system/lib/justep");
 
 	var Model = function(){
@@ -39,15 +39,6 @@ define(function(require){
 	Model.prototype.modelModelConstruct = function(event){
 		var url = require.toUrl("../main/main.w");
 		this.comp("windowContainer1").load(url);
-		var u_auth = sessionStorage.u_auth;
-		if(u_auth >= 1){
-			var li1id = this.getIDByXID("li1");
-			$("#" + li1id).removeClass("hidden-element");
-		}
-		if(u_auth == 2){
-			var li2id = this.getIDByXID("li2");
-			$("#" + li2id).removeClass("hidden-element");
-		}
 	};
 
 	Model.prototype.messageDialog1Yes = function(event){

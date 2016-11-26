@@ -30,9 +30,9 @@ define(function(require) {
 
 	Model.prototype.modelModelConstruct = function(event) {
 		var u_auth = sessionStorage.u_auth;
-		if (u_auth > 0) {
-			var addBtnid = this.getIDByXID("addBtn");
-			$("#" + addBtnid).removeClass("hidden-element");
+		if (u_auth == 2) {
+			var id = this.getIDByXID("col4");
+			$("#" + id).removeClass("hidden-element");
 		}
 		var data = this.comp("data1");
 		data.clear();

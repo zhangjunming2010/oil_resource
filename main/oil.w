@@ -32,7 +32,7 @@
         <div component="$UI/system/components/justep/row/row" class="x-row"
           xid="row3"> 
           <div class="x-col x-col-fixed x-col-center" xid="col7" style="width:auto;"> 
-            <a component="$UI/system/components/justep/button/button" class="btn btn-link hidden-element"
+            <a component="$UI/system/components/justep/button/button" class="btn btn-link"
               label=" 新增物资" xid="addBtn" icon="icon-android-add" onClick="addBtnClick"> 
               <i xid="i1" class="icon-android-add"/>  
               <span xid="span1"> 新增物资</span> 
@@ -104,7 +104,7 @@
                 <th xid="col12" style="text-align:center;vertical-align:middle;width:6%;">库存量</th>  
                 <th xid="col13" style="text-align:center;vertical-align:middle;width:6%;">批次</th>  
                 <th xid="col14" style="text-align:center;vertical-align:middle;">项目标签</th>  
-                <th xid="col4" style="text-align:center;vertical-align:middle;width:8%;">操作</th>
+                <th xid="col4" style="text-align:center;vertical-align:middle;width:8%;" class="hidden-element">操作</th>
               </tr> 
             </thead>  
             <tbody class="x-list-template" xid="listTemplate2"> 
@@ -113,7 +113,7 @@
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output1" bind-ref="ref(&quot;o_nbr&quot;)"/> 
                 </td>  
-                <td xid="td1" style="text-align:center;" bind-style="{display:sessionStorage.u_auth == 2?&quot;&quot;:&quot;none&quot;}"> 
+                <td xid="td1" style="text-align:center;"> 
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output8" bind-ref="ref(&quot;o_name&quot;)"/> 
                 </td>  
@@ -141,7 +141,7 @@
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output7" bind-ref="ref(&quot;o_items&quot;)"/> 
                 </td>  
-                <td xid="td3" style="text-align:center;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="删除" xid="delBtn" onClick="delBtnClick">
+                <td xid="td3" style="text-align:center;" bind-visible="sessionStorage.u_auth == 2"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs" label="删除" xid="delBtn" onClick="delBtnClick">
    <i xid="i2"></i>
    <span xid="span2">删除</span></a></td>
               </tr> 

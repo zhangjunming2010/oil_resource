@@ -11,3 +11,7 @@
 .x-label-edit{
 	padding:1px;
 }
+
+.hidden-element{
+	display:none;
+}

@@ -102,7 +102,7 @@
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output1" bind-ref="ref(&quot;o_nbr&quot;)"/> 
                 </td>  
-                <td xid="td1" style="text-align:center;" bind-style="{display:sessionStorage.u_auth == 2?&quot;&quot;:&quot;none&quot;}"> 
+                <td xid="td1" style="text-align:center;"> 
                   <div component="$UI/system/components/justep/output/output"
                     class="x-output" xid="output8" bind-ref="ref(&quot;o_name&quot;)"/>
                 </td>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window" design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:265px;left:605px;" onModelConstructDone="modelModelConstructDone" onunLoad="modelUnLoad">
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:265px;left:605px;" onunLoad="modelUnLoad" onModelConstruct="modelModelConstruct">
   <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="reviewData" idColumn="o_id" onCustomRefresh="reviewDataCustomRefresh"><column name="o_id" type="String" xid="xid1"></column>
   <column name="o_nbr" type="String" xid="xid2"></column>
   <column name="o_name" type="String" xid="xid3"></column>
@@ -55,7 +55,7 @@
   </div>
   <div class="x-col x-col-center" xid="col24"><span xid="span1" style="color:#FF0000;"><![CDATA[信息：]]></span>
   <span xid="span3" bind-text='val("s_review")' style="color:#FF0000;"></span></div>
-  <div class="x-col x-col-fixed x-col-center" xid="col4" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button1" icon="icon-android-close" onClick="button1Click">
+  <div class="x-col x-col-fixed x-col-center" xid="col4" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button1" icon="icon-android-close" onClick="button1Click" bind-visible="sessionStorage.u_auth &gt;= 1">
    <i xid="i1" class="icon-android-close"></i>
    <span xid="span4"> 取消预警</span></a></div></div></li></ul> </div></div> 
    <div class="col col-xs-6" xid="col3">
@@ -81,7 +81,7 @@
       <div class="x-col x-col-center" xid="col37">
        <span xid="span2" style="color:#FF0000;"><![CDATA[信息：]]></span>
   <span xid="span8" bind-text=' val("o_risk")' style="color:#FF0000;"></span></div> 
-  <div class="x-col x-col-fixed x-col-center" xid="col5" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button2" icon="icon-android-close" onClick="button2Click">
+  <div class="x-col x-col-fixed x-col-center" xid="col5" style="width:auto;"><a component="$UI/system/components/justep/button/button" class="btn btn-default btn-xs btn-only-label pull-right" label=" 取消预警" xid="button2" icon="icon-android-close" onClick="button2Click" bind-visible="sessionStorage.u_auth &gt;= 1">
    <i xid="i2" class="icon-android-close"></i>
    <span xid="span5">取消预警</span></a></div></div> </li> </ul> </div></div> </div></div>
    </div>

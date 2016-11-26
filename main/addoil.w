@@ -30,26 +30,26 @@
    <div class="x-col" xid="col17">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit11">
      <label class="x-label" xid="label11" style="text-align:center;font-weight:bold;"><![CDATA[物资名称：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_name"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_name" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col25" style="width:auto;">
     </div> </div><div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
    <div class="x-col" xid="col8">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit3">
      <label class="x-label" xid="label3" style="text-align:center;font-weight:bold;">平均采购周期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_cycle" maxLength="2" dataType="Integer" format="0,000"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_cycle" maxLength="2" dataType="Integer" format="0,000" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col9" style="width:auto;">
     <span xid="span1" style="font-weight:bold;">单位：月</span></div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
    <div class="x-col" xid="col10">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit4">
      <label class="x-label" xid="label4" style="text-align:center;font-weight:bold;">月均消耗量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_use" format="0,000.00" maxLength="10" dataType="Float"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_use" format="0,000.00" maxLength="10" dataType="Float" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col11" style="width:auto;"><span xid="span9" style="font-weight:bold;">单位：KG</span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row4">
    <div class="x-col" xid="col4">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
      <label class="x-label" xid="label2" style="text-align:center;font-weight:bold;">保质期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" dataType="Integer"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" dataType="Integer" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col1" style="width:auto;">
     <span xid="span2" style="font-weight:bold;">单位：月</span>
   </div> </div>
@@ -57,7 +57,7 @@
    <div class="x-col" xid="col6">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit5">
      <label class="x-label" xid="label5" style="text-align:center;font-weight:bold;">库存量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_stock" maxLength="10" format="0,000.00" dataType="Float" bind-keydown="s_stockKeydown"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_stock" maxLength="10" format="0,000.00" dataType="Float" bind-keydown="Keydown"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col5" style="width:auto;"><span xid="span5" style="font-weight:bold;"><![CDATA[单位：KG]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row6">
    <div class="x-col" xid="col12">

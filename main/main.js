@@ -95,17 +95,6 @@ define(function(require) {
 		this.comp("riskData").refreshData();
 	};
 	
-	var timer = "";
-	
-	Model.prototype.modelModelConstructDone = function(event){
-		var reviewData = this.comp("reviewData");
-		var riskData = this.comp("riskData");
-		timer = setInterval(function(){
-			reviewData.refreshData();
-			riskData.refreshData();
-		},30000);
-	};
-
 	Model.prototype.modelUnLoad = function(event){
 		clearInterval(timer);
 	};
@@ -164,6 +153,16 @@ define(function(require) {
 				// 请求出错处理
 			}
 		});
+	};
+
+	var timer = "";
+	Model.prototype.modelModelConstruct = function(event){
+		var reviewData = this.comp("reviewData");
+		var riskData = this.comp("riskData");
+		timer = setInterval(function(){
+			reviewData.refreshData();
+			riskData.refreshData();
+		},30000);
 	};
 
 	return Model;

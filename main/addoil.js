@@ -175,6 +175,7 @@ define(function(require) {
 	Model.prototype.Keydown = function(event) {
 		event = window.event || event;
 		var id = this.getIDByXID("submitBtn");
+		$("#" + id).focus();
 		if (event.ctrlKey && event.keyCode == 83) {
 			/* 延迟，兼容FF浏览器 */
 			setTimeout(function() {
@@ -183,18 +184,18 @@ define(function(require) {
 			return false;
 		}
 	};
-
-	Model.prototype.s_stockKeydown = function(event){
-		event = window.event || event;
-		var id = this.getIDByXID("submitBtn");
-		if (event.ctrlKey && event.keyCode == 83) {
-			/* 延迟，兼容FF浏览器 */
-			setTimeout(function() {
-				$("#" + id).trigger("click");
-			}, 1);
-			return false;
-		}
-	};
+//
+//	Model.prototype.s_stockKeydown = function(event){
+//		event = window.event || event;
+//		var id = this.getIDByXID("submitBtn");
+//		if (event.ctrlKey && event.keyCode == 83) {
+//			/* 延迟，兼容FF浏览器 */
+//			setTimeout(function() {
+//				$("#" + id).trigger("click");
+//			}, 1);
+//			return false;
+//		}
+//	};
 
 	return Model;
 });

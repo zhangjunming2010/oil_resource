@@ -24,6 +24,7 @@ define(function(require) {
 				// 请求前的处理
 			},
 			success : function(req) {
+				console.log(req);
 				// 请求成功时处理
 				data.loadData(req);
 			},

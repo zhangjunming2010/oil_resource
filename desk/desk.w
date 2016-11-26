@@ -14,11 +14,11 @@
      <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 首页" xid="indexBtn" icon="icon-home" onClick="indexBtnClick">
       <i xid="i3" class="icon-home"></i>
       <span xid="span3">首页</span></a> </li> 
-    <li xid="li1" class="list-group-item text-center tb-nopadding hidden-element" style="background-color:#FFFFFF;">
+    <li xid="li1" class="list-group-item text-center tb-nopadding" style="background-color:#FFFFFF;" bind-visible="sessionStorage.u_auth &gt;= 1">
      <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 物资管理" xid="oilBtn" icon="icon-waterdrop" onClick="oilBtnClick">
       <i xid="i2" class="icon-waterdrop"></i>
       <span xid="span2"> 物资管理</span></a> </li> 
-    <li xid="li2" class="list-group-item text-center tb-nopadding hidden-element" style="background-color:#FFFFFF;">
+    <li xid="li2" class="list-group-item text-center tb-nopadding" style="background-color:#FFFFFF;" bind-visible="sessionStorage.u_auth == 2">
      <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-block" label=" 人员管理" xid="userBtn" icon="icon-person-stalker" onClick="userBtnClick">
       <i xid="i2" class="icon-person-stalker"></i>
       <span xid="span2">人员管理</span></a> </li> 
