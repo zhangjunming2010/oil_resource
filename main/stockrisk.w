@@ -2,7 +2,7 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:350px;left:563px;"><div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data1" idColumn="s_id" confirmDelete="false" confirmRefresh="false"><column name="s_id" type="String" xid="xid1"></column>
+  <div component="$UI/system/components/justep/model/model" xid="model" style="height:auto;top:350px;left:563px;"><div component="$UI/system/components/justep/data/data" autoLoad="true" xid="data1" idColumn="s_id" confirmDelete="false" confirmRefresh="false" limit="-1"><column name="s_id" type="String" xid="xid1"></column>
   <column name="s_batch" type="Integer" xid="xid2"></column>
   <column name="s_stock" type="Float" xid="xid3"></column></div></div>  
   

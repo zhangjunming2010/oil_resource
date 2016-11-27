@@ -79,6 +79,22 @@ define(function(require) {
 		var data = this.comp("data1");
 		data.loadData([event.params.rowdata]);
 		data.first();
+		if(sessionStorage.u_auth == 2){
+			var id = this.getIDByXID("o_nbr");
+			$("#" + id).attr("disabled",false);
+			id = this.getIDByXID("o_name");
+			$("#" + id).removeAttr("disabled");
+			id = this.getIDByXID("o_cycle");
+			$("#" + id).removeAttr("disabled");
+			id = this.getIDByXID("o_use");
+			$("#" + id).removeAttr("disabled");
+			id = this.getIDByXID("o_life");
+			$("#" + id).removeAttr("disabled");
+			id = this.getIDByXID("s_batch");
+			$("#" + id).removeAttr("disabled");
+			id = this.getIDByXID("o_items");
+			$("#" + id).removeAttr("disabled");
+		}
 	};
 
 	return Model;

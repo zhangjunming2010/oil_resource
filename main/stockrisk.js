@@ -9,6 +9,7 @@ define(function(require) {
 	Model.prototype.windowReceiver1Receive = function(event) {
 		var o_id = event.params.o_id;
 		var risksum = event.params.risksum;
+		console.log(o_id);
 		var data = this.comp("data1");
 		data.clear();
 		$.support.cors = true;
@@ -24,7 +25,6 @@ define(function(require) {
 				// 请求前的处理
 			},
 			success : function(req) {
-				console.log(req);
 				// 请求成功时处理
 				data.loadData(req);
 			},

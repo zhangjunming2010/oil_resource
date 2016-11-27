@@ -85,5 +85,5 @@
    <i xid="i2" class="icon-android-close"></i>
    <span xid="span5">取消预警</span></a></div></div> </li> </ul> </div></div> </div></div>
    </div>
-  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="./oillist.w" status="normal" width="98%" showTitle="true" title="检索信息" height="90%" style="top:356px;left:44px;"></span>
+  <span component="$UI/system/components/justep/windowDialog/windowDialog" xid="windowDialog1" src="./oillist.w" status="normal" width="98%" showTitle="true" title="检索信息" height="90%" style="top:356px;left:44px;" forceRefreshOnOpen="false"></span>
   </div>

@@ -31,33 +31,33 @@
    <div class="x-col" xid="col2">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit1">
      <label class="x-label" xid="label1" style="text-align:center;font-weight:bold;"><![CDATA[物资编码：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_nbr" bind-ref='$model.data1.ref("o_nbr")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_nbr" bind-ref='$model.data1.ref("o_nbr")' disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col3" style="width:auto;">
     </div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row12">
    <div class="x-col" xid="col17">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit11">
      <label class="x-label" xid="label11" style="text-align:center;font-weight:bold;"><![CDATA[物资名称：]]></label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_name" bind-ref='$model.data1.ref("o_name")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_name" bind-ref='$model.data1.ref("o_name")' disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col25" style="width:auto;">
     </div> </div><div component="$UI/system/components/justep/row/row" class="x-row" xid="row2">
    <div class="x-col" xid="col8">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit3">
      <label class="x-label" xid="label3" style="text-align:center;font-weight:bold;">平均采购周期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_cycle" maxLength="2" dataType="Integer" format="0,000" bind-ref='$model.data1.ref("o_cycle")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_cycle" maxLength="2" dataType="Integer" format="0,000" bind-ref='$model.data1.ref("o_cycle")' disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col9" style="width:auto;">
     <span xid="span1" style="font-weight:bold;">单位：月</span></div> </div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row3">
    <div class="x-col" xid="col10">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit4">
      <label class="x-label" xid="label4" style="text-align:center;font-weight:bold;">月均消耗量：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_use" format="0,000.00" maxLength="10" dataType="Float" bind-ref='$model.data1.ref("o_use")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_use" format="0,000.00" maxLength="10" dataType="Float" bind-ref='$model.data1.ref("o_use")' disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col11" style="width:auto;"><span xid="span9" style="font-weight:bold;">单位：KG</span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row4">
    <div class="x-col" xid="col4">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit2">
      <label class="x-label" xid="label2" style="text-align:center;font-weight:bold;">保质期：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" dataType="Integer" bind-ref='$model.data1.ref("o_life")'></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="o_life" maxLength="2" dataType="Integer" bind-ref='$model.data1.ref("o_life")' disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col1" style="width:auto;">
     <span xid="span2" style="font-weight:bold;">单位：月</span>
   </div> </div>
@@ -71,13 +71,13 @@
    <div class="x-col" xid="col12">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit6">
      <label class="x-label" xid="label6" style="text-align:center;font-weight:bold;">批次：</label>
-     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" bind-ref='$model.data1.ref("s_batch")' maxLength="6"></input></div> </div> 
+     <input component="$UI/system/components/justep/input/input" class="form-control x-edit" xid="s_batch" dataType="Integer" bind-ref='$model.data1.ref("s_batch")' maxLength="6" disabled="true"></input></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col7" style="width:auto;"><span xid="span7" style="font-weight:bold;"><![CDATA[格式：201601]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row7">
    <div class="x-col" xid="col14">
     <div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30" xid="labelEdit8">
      <label class="x-label" xid="label8" style="text-align:center;font-weight:bold;">项目标签：</label>
-     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="o_items" style="height:100%;" bind-ref='$model.data1.ref("o_items")'></textarea></div> </div> 
+     <textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit" xid="o_items" style="height:100%;" bind-ref='$model.data1.ref("o_items")' disabled="true"></textarea></div> </div> 
    <div class="x-col x-col-20 x-col-center" xid="col13" style="width:auto;"><span xid="span8" style="font-weight:bold;"><![CDATA[说明：多个项目中间空格隔开]]></span></div></div>
   <div component="$UI/system/components/justep/row/row" class="x-row" xid="row8">
    <div class="x-col" xid="col15"></div>

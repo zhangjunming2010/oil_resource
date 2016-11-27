@@ -79,7 +79,9 @@ define(function(require) {
 		var url = require.toUrl("./stockrisk.w");
 		winDialog.set({
 			"title" : "编号：" + o_nbr + "库存情况",
-			"showTitle" : true
+			"showTitle" : true,
+			"height" : "65%",
+			"width" : "35%"
 		});
 		winDialog.open({
 			src : url,
